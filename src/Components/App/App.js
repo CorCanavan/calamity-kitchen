@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { isCompositeComponent } from 'react-dom/test-utils';
 import { Route } from 'react-router-dom';
 import './App.css';
+import Ingredients from '../Ingredients/Ingredients';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
@@ -31,6 +32,9 @@ const App = () => {
       <header>
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
+      <Route exact path="/" >
+        <Ingredients ingredients={ingredients} />
+      </Route>
     </main>
   )
 }
