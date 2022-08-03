@@ -8,6 +8,9 @@ const App = () => {
       <header>
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
+      <main className="main-container">
+
+      </main>
     
     </div>
   )

@@ -22,6 +22,18 @@ header {
   color: #7EF0F4;
 }
 
+
+/* background-image: url('../../assets/botw_bg_2.jpeg');
+background-image: url('../../assets/Picture1.png'); */
+
+.main-container {
+  background-image: url('../../assets/Picture1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 90vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
