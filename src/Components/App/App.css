@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'HyliaSerifBeta-Regular';
+  src: local('HyliaSerifBeta-Regular'), url('../../assets/HyliaSerifBeta-Regular.otf') format('opentype')
+}
+
+.header-title {
+  font-family: 'HyliaSerifBeta-Regular';
+  text-align: center;
+  color: #7EF0F4;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
