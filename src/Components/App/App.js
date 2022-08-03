@@ -5,7 +5,10 @@ const App = () => {
 
   return (
     <div>
-      <h1 className="header-title">Calamity Kitchen</h1>
+      <header>
+        <h1 className="header-title">Calamity Kitchen</h1>
+      </header>
+    
     </div>
   )
 }
