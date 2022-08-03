@@ -1,6 +1,6 @@
 import React from 'react';
 import './Ingredients.css';
-import Card from './Card/Card';
+import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
 const Ingredients = ({ ingredients }) => {

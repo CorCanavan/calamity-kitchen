@@ -31,7 +31,7 @@ background-image: url('../../assets/Picture1.png'); */
   background-image: url('../../assets/Picture1.png');
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: scroll;
   height: 100vh;
 }
 
