@@ -29,13 +29,15 @@ const Dropdown = ({ ingredients, cookingEffect, setCookingEffect, filterIngredie
   }
 
   return (
-    <form>
-      <select onChange={(e) => setCookingEffect(e.target.value)}>
-        <option value="select">Select a Cooking Effect</option>
-          {cookingEffects}
-      </select>
-      <button className="get-ingredients" onClick={(e) => handleClick(e)}>Get Ingredients!</button>
-    </form>
+    <div className="form-container">
+      <form>
+        <select onChange={(e) => setCookingEffect(e.target.value)}>
+          <option value="select">Select a Cooking Effect</option>
+            {cookingEffects}
+        </select>
+        <button className="get-ingredients" onClick={(e) => handleClick(e)}>Get Ingredients!</button>
+      </form>
+    </div>
   )
 }
 

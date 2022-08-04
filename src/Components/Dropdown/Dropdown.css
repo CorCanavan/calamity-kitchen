@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+select, .get-ingredients {
+  font-family: 'HyliaSerifBeta-Regular';
+  text-align: center;
+  font-size: 18px;
+  margin: 5px;
+}
+
+/* select {
+  width: 20%;
+} */
