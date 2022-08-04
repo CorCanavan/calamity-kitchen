@@ -17,22 +17,31 @@ const App = () => {
   // button to go back to all ingredients?
 
   const getMaterialIngredients = () => {
-    fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
+    return fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
     .then(response => response.json())
-    .then(data => setIngredients(data.data))
+    .then(data => data.data)
     .catch(error => console.log(error))
   }
 
   const getCreatureIngredients = () => {
-    fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
+    return fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
     .then(response => response.json())
-    .then(data => setIngredients(prevState => [...prevState, ...data.data.food]))
+    .then(data => data.data.food)
     .catch(error => console.log(error))
   }
 
   useEffect(() => {
-    getMaterialIngredients()
-    getCreatureIngredients()
+    const getIngredients = async () => {
+      try {
+          const materials = await getMaterialIngredients()
+          const creatures = await getCreatureIngredients()
+
+          setIngredients([...materials, ...creatures])
+      } catch (error) {
+        console.log(error)
+      }
+    } 
+    getIngredients()
   }, [])
 
   const filterIngredients = () => {

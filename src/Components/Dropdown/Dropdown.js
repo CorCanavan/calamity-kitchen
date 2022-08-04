@@ -8,16 +8,19 @@ const Dropdown = ({ ingredients, cookingEffect, setCookingEffect, filterIngredie
 
   const cookingEffects = [...ingredients]
     .reduce((acc, ingredient) => {
-      if (!acc.includes(ingredient.cooking_effect) && ingredient.cooking_effect) {
+      if (!acc.includes(ingredient.cooking_effect)) {
       acc.push(ingredient.cooking_effect)
       }
       // console.log("acc", acc)
       return acc;
     }, [])
     .sort()
+    // console.log("sorted", cookingEffects)
+    // .splice(0, 1, 'N/A')
+    // console.log("spliced", cookingEffects)
     .map(cookEffect => {
       return (
-        <option value={cookEffect} key={cookEffect}>{cookEffect}</option>
+        <option value={cookEffect || 'N/A'} key={cookEffect || 'N/A'}>{cookEffect || 'No Effect'}</option>
       )
     })
 
@@ -33,6 +36,7 @@ const Dropdown = ({ ingredients, cookingEffect, setCookingEffect, filterIngredie
       <form>
         <select onChange={(e) => setCookingEffect(e.target.value)}>
           <option value="select">Select a Cooking Effect</option>
+          <option value="">All Cooking Effects</option>
             {cookingEffects}
         </select>
         <button className="get-ingredients" onClick={(e) => handleClick(e)}>Get Ingredients!</button>
