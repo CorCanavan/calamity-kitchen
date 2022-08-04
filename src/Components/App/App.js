@@ -7,26 +7,9 @@ import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
-  console.log("ingredients", ingredients)
   const [filteredIngredients, setFilteredIngredients] = useState([])
-  console.log("filteredIngredients", filteredIngredients);
   const [allCookingEffects, setAllCookingEffects] = useState([])
-  console.log("allCookingEffects", allCookingEffects)
   const [cookingEffect, setCookingEffect] = useState('')
-
-  // const getMaterialIngredients = () => {
-  //   return fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
-  //   .then(response => response.json())
-  //   .then(data => data.data)
-  //   .catch(error => console.log(error))
-  // }
-
-  // const getCreatureIngredients = () => {
-  //   return fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
-  //   .then(response => response.json())
-  //   .then(data => data.data.food)
-  //   .catch(error => console.log(error))
-  // }
 
   useEffect(() => {
     const getIngredients = async () => {
