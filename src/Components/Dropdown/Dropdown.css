@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+select {
+  font-family: 'HyliaSerifBeta-Regular';
+  text-align: center;
+  font-size: 20px;
+  margin-right: 5px;
+  width: 20%;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
