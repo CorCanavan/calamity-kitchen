@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
+import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 
@@ -56,8 +57,10 @@ const App = () => {
           </div>
       }} />
       <Route exact path="/:id" render={({ match }) => {
-        console.log("match", match)
-        console.log("match", match.params)
+        const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
+        console.log("ingredient", ingredientToRender)
+      
+        return <IngredientDetails {...ingredientToRender} />
       }}/>
     </main>
   )
