@@ -3,6 +3,7 @@ import { isCompositeComponent } from 'react-dom/test-utils';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
+import Dropdown from '../Dropdown/Dropdown';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
@@ -33,6 +34,7 @@ const App = () => {
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
       <Route exact path="/" >
+        <Dropdown ingredients={ingredients} />
         <Ingredients ingredients={ingredients} />
       </Route>
     </main>
