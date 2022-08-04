@@ -49,10 +49,16 @@ const App = () => {
       <header>
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
-      <Route exact path="/" >
-        <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
-        <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
-      </Route>
+      <Route exact path="/" render={() => {
+        return <div>
+            <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
+            <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
+          </div>
+      }} />
+      <Route exact path="/:id" render={({ match }) => {
+        console.log("match", match)
+        console.log("match", match.params)
+      }}/>
     </main>
   )
 }
