@@ -11,6 +11,11 @@ const App = () => {
 
   const [cookingEffect, setCookingEffect] = useState('')
 
+  //setALlCooking effects, pass array of strings down to Dropdown
+  // pass selected Cooking effect back up to app to filter ingredients by
+  // conditional if cookingeffect is truthy render filteredIngredients 
+  // button to go back to all ingredients?
+
   const getMaterialIngredients = () => {
     fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
     .then(response => response.json())
@@ -41,7 +46,7 @@ const App = () => {
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
       <Route exact path="/" >
-        <Dropdown ingredients={ingredients} cookingEffect={cookingEffect} setCookingEffect={setCookingEffect} filterIngredients={filterIngredients} />
+        <Dropdown ingredients={ingredients} cookingEffect={cookingEffect} setCookingEffect={setCookingEffect} filterIngredients={filterIngredients}/>
         <Ingredients ingredients={ingredients} />
       </Route>
     </main>

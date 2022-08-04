@@ -1,14 +1,23 @@
+/* .form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border: 2px solid black;
+} */
+
 form {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  /* border: 2px solid black; */
 }
 
 select, .get-ingredients {
   font-family: 'HyliaSerifBeta-Regular';
   text-align: center;
-  font-size: 18px;
-  margin: 5px;
+  font-size: 20px;
+  margin-right: 5px;
+  width: 20%;
 }
 
 /* select {
