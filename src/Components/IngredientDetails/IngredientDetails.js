@@ -7,8 +7,10 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
     // console.log("locations", locations)
   return (
     <div className="details-wrapper">
-      <div className="details-container">
-        <img className="details-img" src={image} alt={name}/>
+      <section className="details-container">
+        <div className="img-wrapper">
+          <img className="details-img" src={image} alt={name}/>
+        </div>
         <div className="details-info">
           <h2>{name}</h2>
           <p><strong>Category:</strong> {category} </p>
@@ -17,7 +19,7 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
           <p><i>{description}</i></p>
           <p><strong>Hearts Recovered:</strong> {hearts_recovered}</p>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
