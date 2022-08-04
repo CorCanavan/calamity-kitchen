@@ -8,7 +8,7 @@ const Card = ({ category, name, cooking_effect, description, common_locations, h
     <div className="card">
       <h2 className="ingredient-name">{name}</h2>
       <img className="ingredient-image" src={image} />
-      <h3 className="cooking-effect">Cooking Effect: {cooking_effect}</h3>
+      <h3 className="cooking-effect">Cooking Effect: {!cooking_effect ? 'N/A' : cooking_effect}</h3>
     </div>
   )
 }
