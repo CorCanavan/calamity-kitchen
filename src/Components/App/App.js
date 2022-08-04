@@ -3,32 +3,30 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
 import Dropdown from '../Dropdown/Dropdown';
+import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
   console.log("ingredients", ingredients)
-
-  const [cookingEffect, setCookingEffect] = useState('')
   const [filteredIngredients, setFilteredIngredients] = useState([])
+  console.log("filteredIngredients", filteredIngredients);
+  const [allCookingEffects, setAllCookingEffects] = useState([])
+  console.log("allCookingEffects", allCookingEffects)
+  const [cookingEffect, setCookingEffect] = useState('')
 
-  //setALlCooking effects, pass array of strings down to Dropdown
-  // pass selected Cooking effect back up to app to filter ingredients by
-  // conditional if cookingeffect is truthy render filteredIngredients 
-  // button to go back to all ingredients?
+  // const getMaterialIngredients = () => {
+  //   return fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
+  //   .then(response => response.json())
+  //   .then(data => data.data)
+  //   .catch(error => console.log(error))
+  // }
 
-  const getMaterialIngredients = () => {
-    return fetch('https://botw-compendium.herokuapp.com/api/v2/category/materials')
-    .then(response => response.json())
-    .then(data => data.data)
-    .catch(error => console.log(error))
-  }
-
-  const getCreatureIngredients = () => {
-    return fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
-    .then(response => response.json())
-    .then(data => data.data.food)
-    .catch(error => console.log(error))
-  }
+  // const getCreatureIngredients = () => {
+  //   return fetch('https://botw-compendium.herokuapp.com/api/v2/category/creatures')
+  //   .then(response => response.json())
+  //   .then(data => data.data.food)
+  //   .catch(error => console.log(error))
+  // }
 
   useEffect(() => {
     const getIngredients = async () => {
@@ -41,7 +39,15 @@ const App = () => {
             }
             return ingredient;
           })
+          const cookingEffects = formattedIngredients
+          .reduce((acc, ingredient) => {
+            if (!acc.includes(ingredient.cooking_effect)) {
+            acc.push(ingredient.cooking_effect)
+            }
+            return acc;
+          }, []).sort()
           setIngredients(formattedIngredients)
+          setAllCookingEffects(cookingEffects);
       } catch (error) {
         console.log(error)
       }
@@ -61,7 +67,7 @@ const App = () => {
         <h1 className="header-title">Calamity Kitchen</h1>
       </header>
       <Route exact path="/" >
-        <Dropdown ingredients={ingredients} setCookingEffect={setCookingEffect} handleEffectSelect={handleEffectSelect} />
+        <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
         <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
       </Route>
     </main>
