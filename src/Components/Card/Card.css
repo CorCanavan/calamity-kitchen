@@ -1,0 +1,27 @@
+.card {
+  box-sizing: border-box;
+  border: 2px solid #536f50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5%;
+  justify-content: center;
+  /* text-align: center; */
+  /* background-color: rgb(0, 0, 0, .7); */
+  background-color: rgb(83, 111, 80, .7);
+  padding: 10px;
+}
+
+.ingredient-name, .cooking-effect {
+  font-family: 'HyliaSerifBeta-Regular';
+  color: white;
+}
+
+.ingredient-image {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5%;
+  /* padding: 5px; */
+  width: 85%;
+}
+
