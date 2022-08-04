@@ -12,7 +12,7 @@ form {
   /* border: 2px solid black; */
 }
 
-select, .get-ingredients {
+select {
   font-family: 'HyliaSerifBeta-Regular';
   text-align: center;
   font-size: 20px;
@@ -20,6 +20,7 @@ select, .get-ingredients {
   width: 20%;
 }
 
-/* select {
-  width: 20%;
-} */
+select:hover {
+  cursor: pointer;
+}
+

@@ -50,20 +50,10 @@ const App = () => {
   }, [])
 
   const handleEffectSelect = (effect) => {
-    console.log("effect before", effect)
     setCookingEffect(effect)
-
-    console.log("effect after", effect, "cookingEffect after", cookingEffect)
     const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === effect)
-    console.log("filtered const", filtered)
     setFilteredIngredients(filtered)
   }
-  // console.log("filteredstate", filteredIngredients)
-
-  // const filterIngredients = () => {
-  //   const filteredIngredients = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect)
-  //   setIngredients(filteredIngredients)
-  // }
 
   return (
     <main className="main-container">
@@ -72,7 +62,7 @@ const App = () => {
       </header>
       <Route exact path="/" >
         <Dropdown ingredients={ingredients} setCookingEffect={setCookingEffect} handleEffectSelect={handleEffectSelect} />
-        <Ingredients ingredients={ingredients} />
+        <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
       </Route>
     </main>
   )
