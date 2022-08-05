@@ -21,8 +21,8 @@ export default Card;
 // do these props need isRequired?
 
 Card.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  image: PropTypes.string,
-  cooking_effect: PropTypes.string
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  cooking_effect: PropTypes.string.isRequired
 }
