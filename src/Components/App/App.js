@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
+import Error from '../Error/Error';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const getIngredients = async () => {
@@ -33,7 +35,7 @@ const App = () => {
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
       } catch (error) {
-        console.log(error)
+        setError('Uh oh! Something went wrong, please try again.')
       }
     } 
     getIngredients()
@@ -48,21 +50,25 @@ const App = () => {
   return (
     <main className="main-container">
       <header>
-        <Link to="/" >
+        <Link to="/">
         <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
-      <Route exact path="/" render={() => {
-        return <div>
-            <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
-            <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
-          </div>
-      }} />
-      <Route exact path="/:id" render={({ match }) => {
-        const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-        
-        return <IngredientDetails {...ingredientToRender} />
-      }}/>
+      {error && <p className="app-error">{error}</p>}
+      <Switch>
+        <Route exact path="/" render={() => {
+          return <div>
+              <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
+              <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
+            </div>
+        }} />
+        <Route exact path="/ingredient/:id" render={({ match }) => {
+          const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
+          
+          return <IngredientDetails {...ingredientToRender} />
+        }}/>
+        <Route path="*" component={Error} />
+      </ Switch>
     </main>
   )
 }

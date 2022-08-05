@@ -34,3 +34,11 @@ background-image: url('../../assets/Picture1.png'); */
   overflow: scroll;
   height: 100vh;
 }
+
+.app-error {
+  font-family: 'HyliaSerifBeta-Regular';
+  text-align: center;
+  color: #C62408;
+  font-size: 1.2em;
+  padding-top: 0.5em;
+}
