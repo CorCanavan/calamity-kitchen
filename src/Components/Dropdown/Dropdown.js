@@ -20,5 +20,6 @@ const Dropdown = ({ allCookingEffects, handleEffectSelect }) => {
 export default Dropdown;
 
 Dropdown.propTypes = {
-  allCookingEffects: PropTypes.array
+  allCookingEffects: PropTypes.arrayOf(PropTypes.string),
+  handleEffectSelect: PropTypes.func
 }
