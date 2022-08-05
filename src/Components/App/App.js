@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
+import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 
@@ -47,12 +48,21 @@ const App = () => {
   return (
     <main className="main-container">
       <header>
+        <Link to="/" >
         <h1 className="header-title">Calamity Kitchen</h1>
+        </Link>
       </header>
-      <Route exact path="/" >
-        <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
-        <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
-      </Route>
+      <Route exact path="/" render={() => {
+        return <div>
+            <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
+            <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
+          </div>
+      }} />
+      <Route exact path="/:id" render={({ match }) => {
+        const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
+        
+        return <IngredientDetails {...ingredientToRender} />
+      }}/>
     </main>
   )
 }

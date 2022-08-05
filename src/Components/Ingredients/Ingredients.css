@@ -1,6 +1,8 @@
 .ingredients-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 40px;
-  padding: 40px;
+  /* grid-gap: 40px;
+  padding: 40px; */
+  grid-gap: 2.5em;
+  padding: 2.5em;
 }
