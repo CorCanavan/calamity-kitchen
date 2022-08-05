@@ -12,6 +12,7 @@ const App = () => {
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const getIngredients = async () => {
@@ -34,7 +35,7 @@ const App = () => {
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
       } catch (error) {
-        console.log(error)
+        setError('Uh oh! Something went wrong, please try again.')
       }
     } 
     getIngredients()
@@ -53,6 +54,7 @@ const App = () => {
         <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
+      {error && <p className="app-error">{error}</p>}
       <Switch>
         <Route exact path="/" render={() => {
           return <div>
