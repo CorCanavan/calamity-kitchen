@@ -64,7 +64,7 @@ const App = () => {
         }} />
         <Route exact path="/ingredient/:id" render={({ match }) => {
           const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-          
+          console.log("ingredientToRender", ingredientToRender)
           return <IngredientDetails {...ingredientToRender} />
         }}/>
         <Route path="*" component={Error} />
