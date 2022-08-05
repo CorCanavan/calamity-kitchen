@@ -7,15 +7,11 @@ const Ingredients = ({ ingredients }) => {
   const ingredientCards = ingredients.map(ingredient => {
     return (
       <Card 
-        category={ingredient.category}
-        common_locations={ingredient.common_locations}
+        name={ingredient.name}
+        image={ingredient.image}
         cooking_effect={ingredient.cooking_effect}
-        description={ingredient.description}
-        hearts_recovered={ingredient.hearts_recovered}
         id={ingredient.id}
         key={ingredient.id}
-        image={ingredient.image}
-        name={ingredient.name}
       />
     )
   })
@@ -29,5 +25,16 @@ const Ingredients = ({ ingredients }) => {
 export default Ingredients;
 
 Ingredients.propTypes = {
-  ingredients: PropTypes.array
+  ingredients: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string,
+      common_locations: PropTypes.array,
+      cooking_effect: PropTypes.string,
+      description: PropTypes.string,
+      hearts_recovered: PropTypes.number,
+      id: PropTypes.number,
+      image: PropTypes.string,
+      name: PropTypes.string
+    })
+  )
 }

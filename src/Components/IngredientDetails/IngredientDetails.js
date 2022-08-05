@@ -1,6 +1,7 @@
 import React from 'react';
 import './IngredientDetails.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const IngredientDetails = ({ category, name, cooking_effect, description, common_locations, hearts_recovered, image, id }) => {
 
@@ -33,3 +34,13 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
 }
 
 export default IngredientDetails;
+
+IngredientDetails.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.string,
+  cooking_effect: PropTypes.string,
+  category: PropTypes.string,
+  description: PropTypes.string,
+  common_locations: PropTypes.array,
+  hearts_recovered: PropTypes.number
+}
