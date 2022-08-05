@@ -25,5 +25,16 @@ const Ingredients = ({ ingredients }) => {
 export default Ingredients;
 
 Ingredients.propTypes = {
-  ingredients: PropTypes.arrayOf(PropTypes.object)
+  ingredients: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string,
+      common_locations: PropTypes.array,
+      cooking_effect: PropTypes.string,
+      description: PropTypes.string,
+      hearts_recovered: PropTypes.number,
+      id: PropTypes.number,
+      image: PropTypes.string,
+      name: PropTypes.string
+    })
+  )
 }
