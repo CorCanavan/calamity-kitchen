@@ -43,6 +43,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
+  /* font-size: 18px; */
 }
 
 .button-container {
