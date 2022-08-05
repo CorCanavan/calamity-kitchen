@@ -17,3 +17,10 @@ const Card = ({ name, cooking_effect, image, id }) => {
 }
 
 export default Card;
+
+Card.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  cooking_effect: PropTypes.string
+}
