@@ -60,7 +60,7 @@ const App = () => {
               <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
             </div>
         }} />
-        <Route exact path="/:id" render={({ match }) => {
+        <Route exact path="/ingredient/:id" render={({ match }) => {
           const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
           
           return <IngredientDetails {...ingredientToRender} />

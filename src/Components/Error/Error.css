@@ -1,0 +1,32 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+}
+
+.four-oh-four {
+  font-family: 'HyliaSerifBeta-Regular';
+  color: #C62408
+}
+
+.error-page-msg, .error-page-link {
+  font-family: 'HyliaSerifBeta-Regular';
+  font-size: 1.3em;
+}
+
+.error-page-link {
+  font-style: italic;
+}
+
+.error-image {
+  margin: .8em;
+  border-radius: 2%;
+  width: 55%;
+}
+
+.error-page-link:hover {
+  transform: scale(1.2);
+}
