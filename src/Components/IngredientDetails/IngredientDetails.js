@@ -1,3 +1,4 @@
+import React from 'react';
 import './IngredientDetails.css';
 
 const IngredientDetails = ({ category, name, cooking_effect, description, common_locations, hearts_recovered, image, id }) => {
@@ -21,7 +22,7 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
           </div>
         </article>
         <article className="button-container">
-          <button>BACK</button>
+          <button className="back-btn">BACK</button>
         </article>
       </section>
     </div>
