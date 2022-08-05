@@ -48,7 +48,7 @@ const App = () => {
   return (
     <main className="main-container">
       <header>
-        <Link to="/" >
+        <Link to="/">
         <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
