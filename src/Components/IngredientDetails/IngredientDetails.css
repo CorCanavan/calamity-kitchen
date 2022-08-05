@@ -46,16 +46,22 @@
 }
 
 .button-container {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
+  /* border: 2px solid pink; */
 }
 
 .back-btn {
   font-family: 'HyliaSerifBeta-Regular';
-  font-size: 18px;
-  width: 12%;
+  font-size: 20px;
+  width: 100%;
   background-color: #7EF0F4;
   padding-top: 2px;
   padding-bottom: 2px; 
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './IngredientDetails.css';
+import { Link } from 'react-router-dom';
 
 const IngredientDetails = ({ category, name, cooking_effect, description, common_locations, hearts_recovered, image, id }) => {
 
@@ -22,7 +23,9 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
           </div>
         </article>
         <article className="button-container">
-          <button className="back-btn">BACK</button>
+          <Link to="/">
+            <button className="back-btn">BACK</button>
+          </ Link>
         </article>
       </section>
     </div>
