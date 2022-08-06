@@ -35,7 +35,7 @@ const App = () => {
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
       } catch (error) {
-        setError('Uh oh! Something went wrong, please try again.')
+        setError('Uh oh! Something went wrong, please try again later.')
       }
     } 
     getIngredients()
@@ -64,7 +64,7 @@ const App = () => {
         }} />
         <Route exact path="/ingredient/:id" render={({ match }) => {
           const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-          
+
           return <IngredientDetails {...ingredientToRender} />
         }}/>
         <Route path="*" component={Error} />
