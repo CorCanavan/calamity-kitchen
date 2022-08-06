@@ -1,0 +1,32 @@
+{
+  "data": {
+      "food":[
+        {
+          "category": "creatures",
+          "common_locations": [
+              "Hyrule Ridge",
+              "Tabantha Frontier"
+          ],
+          "cooking_effect": "heat resistance",
+          "description": "The powdery scales of this butterfly's wings cool the air around it. Watching it flutter around snowflakes is a thing of beauty. Cook it with monster parts for a heat-resistant elixir.",
+          "hearts_recovered": 0,
+          "id": 67,
+          "image": "https://botw-compendium.herokuapp.com/api/v2/entry/winterwing_butterfly/image",
+          "name": "winterwing butterfly"
+        },
+        {
+          "category": "creatures",
+          "common_locations": [
+              "West Necluda",
+              "East Necluda"
+          ],
+          "cooking_effect": "attack up",
+          "description": "This beetle's razor-sharp horns demand that you handle it with care. Boil the horns alongside monster parts to concoct an elixir that will raise your attack power.",
+          "hearts_recovered": 0,
+          "id": 75,
+          "image": "https://botw-compendium.herokuapp.com/api/v2/entry/bladed_rhino_beetle/image",
+          "name": "bladed rhino beetle"
+        }
+      ]
+  }
+}

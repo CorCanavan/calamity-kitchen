@@ -35,7 +35,7 @@ const App = () => {
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
       } catch (error) {
-        setError('Uh oh! Something went wrong, please try again.')
+        setError(error.message)
       }
     } 
     getIngredients()
@@ -54,7 +54,7 @@ const App = () => {
         <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
-      {error && <p className="app-error">{error}</p>}
+      {error && <p className="app-error">{error}{error.message}</p>}
       <Switch>
         <Route exact path="/" render={() => {
           return <div>
@@ -64,7 +64,7 @@ const App = () => {
         }} />
         <Route exact path="/ingredient/:id" render={({ match }) => {
           const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-          
+
           return <IngredientDetails {...ingredientToRender} />
         }}/>
         <Route path="*" component={Error} />

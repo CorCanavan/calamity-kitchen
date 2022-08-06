@@ -1,0 +1,30 @@
+{ 
+  "data": [
+    {
+        "category": "materials",
+        "common_locations": [
+            "West Necluda",
+            "Lanayru Great Spring"
+        ],
+        "cooking_effect": "stealth up",
+        "description": "A plant that grows in the quieter areas of Hyrule. At night, it gives off a soft glow. Cook with it to increase your stealth.",
+        "hearts_recovered": 0,
+        "id": 198,
+        "image": "https://botw-compendium.herokuapp.com/api/v2/entry/blue_nightshade/image",
+        "name": "blue nightshade"
+    },
+    {
+        "category": "materials",
+        "common_locations": [
+            "Hyrule Field",
+            "Tabantha Frontier"
+        ],
+        "cooking_effect": "stamina recovery",
+        "description": "Honey straight from the hive is chock-full of nutrients. Cooking this into a meal unlocks the potential of these nutrients and provides a stamina-recovery effect.",
+        "hearts_recovered": 2,
+        "id": 200,
+        "image": "https://botw-compendium.herokuapp.com/api/v2/entry/courser_bee_honey/image",
+        "name": "courser bee honey"
+    }
+  ]
+}
