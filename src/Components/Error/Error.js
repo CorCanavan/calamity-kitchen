@@ -10,7 +10,7 @@ const Error = () => {
       <h2 className="four-oh-four">404 Error</h2>
       <p className="error-page-msg">Uh oh! This page doesn't exist.</p>
       <Link to="/" className="error-page-link">Click here to go back to the homepage.</ Link>
-      <img className="error-image" src={gameOver} />
+      <img className="error-image" src={gameOver} alt="game-over-404" />
     </div>
   )
 }

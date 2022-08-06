@@ -19,6 +19,7 @@ describe('Homepage user flows', () => {
 
     cy.get('form').find('select').should('have.length', 1)
     cy.get('option[value="select"]').should('contain', 'Select a Cooking Effect')
+    
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
 
