@@ -23,7 +23,7 @@ describe('Homepage user flows', () => {
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
 
-  it('should display correct elements for ingredient cards', () => {
+  it('should display correct elements within ingredient cards', () => {
     cy.get('.card').first().contains('h2', 'blue nightshade')
     cy.get('.card').first().find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/blue_nightshade/image')
     cy.get('.card').first().contains('p', 'stealth up')
@@ -46,12 +46,23 @@ describe('Homepage user flows', () => {
     cy.get('.card').last().contains('p', 'attack up')
   })
 
-  it.only('should display an error message if ingredients are unable to load due to 400 error', () => {
+  it('should display an error message if ingredients are unable to load due to 400 error', () => {
     cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
       statusCode: 400
     })
     cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/creatures', {
       statusCode: 400
+    })
+    cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
+    cy.get('.ingredients-container').should('be.empty')
+  })
+
+  it('should display an error message if ingredients are unable to load due to 500 error', () => {
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
+      statusCode: 500
+    })
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/creatures', {
+      statusCode: 500
     })
     cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
     cy.get('.ingredients-container').should('be.empty')
