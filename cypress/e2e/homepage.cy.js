@@ -13,13 +13,12 @@ describe('Homepage user flows', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('should render the site header, dropdown menu, and all ingredient cards to homepage on page load', () => {
+  it('should render the site header, dropdown menu, and all ingredient cards on page load', () => {
     cy.url().should('eq', 'http://localhost:3000/')
     cy.get('.header-title').contains('h1', 'Calamity Kitchen')
 
     cy.get('form').find('select').should('have.length', 1)
     cy.get('option[value="select"]').should('contain', 'Select a Cooking Effect')
-
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
 
@@ -66,6 +65,19 @@ describe('Homepage user flows', () => {
     })
     cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
     cy.get('.ingredients-container').should('be.empty')
+  })
+
+  it('should display 404 page if user enters URL that does not exist', () => {
+    cy.visit('http://localhost:3000/cats')
+
+    cy.get('.error-page').contains('h2', '404 Error')
+    cy.get('.error-page-msg').should('contain', 'Uh oh! This page doesn\'t exist.')
+
+    cy.get('.error-page-link').should('contain', 'Click here to go back to the homepage.')
+    cy.get('.error-image').should('have.attr', 'src', '/static/media/gameOver.6cb8869ccd590464a360.jpeg')
+
+    cy.get('.error-page-link').click()
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 
   it('should be able to click on an ingredient card and be brought to an Ingredient Details page with a different URL', () => {
