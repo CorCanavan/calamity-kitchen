@@ -46,8 +46,16 @@ describe('Homepage user flows', () => {
     cy.get('.card').last().contains('p', 'attack up')
   })
 
-  it('should be able to click on an ingredient card and be brought to a page with more details on the ingredient', () => {
+  it('should be able to click on an ingredient card and be brought to ingredient details page with more information on the ingredient', () => {
     cy.get('.card').first().click()
     cy.url().should('eq', 'http://localhost:3000/ingredient/198')
+
+    cy.get('.details-info').contains('h2', 'blue nightshade')
+    cy.get('.details-info').contains('p', 'materials')
+    cy.get('.details-info').contains('p', 'West Necluda')
+    cy.get('.details-info').contains('p', 'stealth up')
+    cy.get('.details-info').contains('p', 'A plant that grows in the quieter areas of Hyrule. At night, it gives off a soft glow. Cook with it to increase your stealth.')
+    cy.get('.details-info').contains('p', 0)
+    cy.get('.details-img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/blue_nightshade/image')
   })
 })
