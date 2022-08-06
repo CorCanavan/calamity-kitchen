@@ -14,17 +14,16 @@
         "name": "blue nightshade"
     },
     {
-        "category": "materials",
-        "common_locations": [
-            "Hyrule Field",
-            "Tabantha Frontier"
-        ],
-        "cooking_effect": "stamina recovery",
-        "description": "Honey straight from the hive is chock-full of nutrients. Cooking this into a meal unlocks the potential of these nutrients and provides a stamina-recovery effect.",
-        "hearts_recovered": 2,
-        "id": 200,
-        "image": "https://botw-compendium.herokuapp.com/api/v2/entry/courser_bee_honey/image",
-        "name": "courser bee honey"
+      "category": "materials",
+      "common_locations": [
+          "Faron"
+      ],
+      "cooking_effect": "attack up",
+      "description": "This fruit grows mainly in tropical forests of the Faron region. When it's used as an ingredient, the resulting dish will temporarily increase your attack power.",
+      "hearts_recovered": 0.5,
+      "id": 173,
+      "image": "https://botw-compendium.herokuapp.com/api/v2/entry/mighty_bananas/image",
+      "name": "mighty bananas"
     }
   ]
 }
