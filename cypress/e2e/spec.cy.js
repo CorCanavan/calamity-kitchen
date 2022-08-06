@@ -46,6 +46,17 @@ describe('Homepage user flows', () => {
     cy.get('.card').last().contains('p', 'attack up')
   })
 
+  it.only('should display an error message if ingredients are unable to load due to 400 error', () => {
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
+      statusCode: 400
+    })
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/creatures', {
+      statusCode: 400
+    })
+    cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
+    cy.get('.ingredients-container').should('be.empty')
+  })
+
   it('should be able to click on an ingredient card and be brought to ingredient details page with more information on the ingredient', () => {
     cy.get('.card').first().click()
     cy.url().should('eq', 'http://localhost:3000/ingredient/198')
