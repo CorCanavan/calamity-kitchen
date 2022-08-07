@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './IngredientDetails.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const IngredientDetails = ({ category, name, cooking_effect, description, common_locations, hearts_recovered, image, id }) => {
+const IngredientDetails = ({ category, name, cooking_effect, description, common_locations, hearts_recovered, image }) => {
 
-    // let locations = common_locations.join(', ')
-    // console.log("locations", locations)
   return (
     <div className="details-wrapper">
       <section className="details-container">
@@ -17,7 +15,7 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
           <div className="details-info">
             <h2>{name}</h2>
             <p><strong>Category:</strong> {category} </p>
-            <p><strong>Common Locations:</strong> {common_locations} </p>
+            <p><strong>Common Locations:</strong> {common_locations ? common_locations.join(', ') : null } </p>
             <p><strong>Cooking Effect:</strong> {cooking_effect} </p>
             <p><i>{description}</i></p>
             <p><strong>Hearts Recovered:</strong> {hearts_recovered}</p>
