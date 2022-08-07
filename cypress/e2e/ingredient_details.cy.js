@@ -48,4 +48,28 @@ describe('Ingredient Details page', () => {
     cy.get('form').should('be.visible')
     cy.get('.ingredients-container').should('exist')
   })
+
+  it('should display an error message if ingredient details are unable to load due to 400 error', () => {
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
+      statusCode: 400
+    })
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/creatures', {
+      statusCode: 400
+    })
+    cy.visit('http://localhost:3000/ingredient/198')
+    cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
+    cy.get('.details-container').find('.details-img').should('be.empty')
+  })
+
+  it('should display an error message if ingredient details are unable to load due to 500 error', () => {
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
+      statusCode: 500
+    })
+    cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/creatures', {
+      statusCode: 500
+    })
+    cy.visit('http://localhost:3000/ingredient/198')
+    cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
+    cy.get('.details-container').find('.details-img').should('be.empty')
+  })
 })
