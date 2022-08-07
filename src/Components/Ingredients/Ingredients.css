@@ -1,25 +1,7 @@
-/*desktop */
-
-  .ingredients-container {
+.ingredients-container {
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-template-rows: auto;
-    /* grid-template-columns: repeat(auto-fit, 400px); */
-    /* grid-gap: 40px;
-    padding: 40px; */
-    grid-gap: 2.5em;
-    padding: 2.5em;
+    grid-gap: 2em;
+    padding: 2em;
   }
-
-
-/*mobile*/
-/* 
-@media screen and (max-width: 668px) {
-  .ingredients-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 2.5em;
-    padding: 2.5em;
-  }
-} */
