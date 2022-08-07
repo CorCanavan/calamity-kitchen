@@ -62,23 +62,33 @@ const App = () => {
     <main className="main-container">
       <header>
         <Link to="/">
-        <h1 className="header-title">Calamity Kitchen</h1>
+          <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
-      {error && <p className="app-error">{error}</p>}
-      {loading}
+        {error && <p className="app-error">{error}</p>}
+        {loading}
       <Switch>
-        <Route exact path="/" render={() => {
-          return <div>
-              <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
-              <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
+        <Route 
+          exact path="/" 
+          render={() => {
+            return <div>
+              <Dropdown 
+                allCookingEffects={allCookingEffects} 
+                handleEffectSelect={handleEffectSelect} 
+              />
+              <Ingredients 
+                ingredients={!cookingEffect ? ingredients : filteredIngredients} 
+              />
             </div>
-        }} />
-        <Route exact path="/ingredient/:id" render={({ match }) => {
-          const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-
-          return <IngredientDetails {...ingredientToRender} />
-        }}/>
+          }} 
+        />
+        <Route 
+          exact path="/ingredient/:id" 
+          render={({ match }) => {
+            const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
+            return <IngredientDetails {...ingredientToRender} />
+          }}
+        />
         <Route path="*" component={Error} />
       </ Switch>
     </main>
