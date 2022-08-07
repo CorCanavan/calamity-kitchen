@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 
 const Dropdown = ({ allCookingEffects, handleEffectSelect }) => {
 
-  const cookingEffectOptions = allCookingEffects.map(cookEffect => <option value={cookEffect} key={cookEffect}>{cookEffect}</option>)
+  // const cookingEffectsCaps = allCookingEffects.map(element => element.charAt(0).toUpperCase() + element.slice(1).toLowerCase())
+  // console.log("cookingCaps", cookingEffectFormat)
+
+  const capitalizeCookingEffect = (effectString) => {
+    return effectString.charAt(0).toUpperCase() + effectString.slice(1).toLowerCase()
+  } 
+
+  const cookingEffectOptions = allCookingEffects.map(cookEffect => <option value={cookEffect} key={cookEffect}>{capitalizeCookingEffect(cookEffect)}</option>)
 
   return (
       <form>

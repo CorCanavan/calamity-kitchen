@@ -11,13 +11,14 @@ import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
 
 const App = () => {
+
   const [ingredients, setIngredients] = useState([])
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
+  
   useEffect(() => {
     setIsLoading(true)
     const getIngredients = async () => {
