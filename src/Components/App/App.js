@@ -6,6 +6,7 @@ import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
+import Owgc from '../../assets/Owgc.gif';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
@@ -13,8 +14,10 @@ const App = () => {
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     const getIngredients = async () => {
       try {
           const materials = await getMaterialIngredients()
@@ -34,9 +37,11 @@ const App = () => {
           }, []).sort()
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
+          // setIsLoading(false)
       } catch (error) {
         setError('Uh oh! Something went wrong, please try again later.')
       }
+      // setIsLoading(false)
     } 
     getIngredients()
   }, [])
@@ -55,9 +60,11 @@ const App = () => {
         </Link>
       </header>
       {error && <p className="app-error">{error}</p>}
+      {isLoading && <img src={Owgc}/>}
       <Switch>
         <Route exact path="/" render={() => {
           return <div>
+            {/* {isLoading && <img src={Owgc}/>} */}
               <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
               <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
             </div>
