@@ -7,6 +7,7 @@ import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import Owgc from '../../assets/Owgc.gif';
+import cookingSound from '../../assets/cookingSuccess.mp3';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
@@ -46,10 +47,13 @@ const App = () => {
     getIngredients()
   }, [])
 
+  const audio = new Audio(cookingSound)
+
   const handleEffectSelect = (effect) => {
     setCookingEffect(effect)
     const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === effect)
     setFilteredIngredients(filtered)
+    audio.play()
   }
 
   return (
