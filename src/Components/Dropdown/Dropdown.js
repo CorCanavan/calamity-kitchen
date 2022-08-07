@@ -9,7 +9,7 @@ const Dropdown = ({ allCookingEffects, handleEffectSelect }) => {
   return (
       <form>
         <select onChange={(e) => handleEffectSelect(e.target.value)}>
-          <option value="select">Select a Cooking Effect</option>
+          <option value="select">Select a Cooking Effect:</option>
           <option value="">All Cooking Effects</option>
             {cookingEffectOptions}
         </select>
