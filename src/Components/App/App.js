@@ -56,7 +56,7 @@ const App = () => {
     audio.play()
   }
 
-  const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts}/> </div> : null 
+  const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts} alt="divine-beasts-img" /> </div> : null 
 
   return (
     <main className="main-container">
