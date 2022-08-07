@@ -8,8 +8,7 @@ a {
 }
 
 header {
-  /* background-color: #767676; */
-  background-color: rgb(118, 118, 118, .65);
+  background-color: rgb(118, 118, 118, .6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +20,7 @@ header {
   font-size: 36px;
   text-align: center;
   color: #7EF0F4;
+  text-shadow: 2px 2px #536f50;
 }
 
 .main-container {

@@ -18,8 +18,6 @@ const Card = ({ name, cooking_effect, image, id }) => {
 
 export default Card;
 
-// do these props need isRequired?
-
 Card.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,

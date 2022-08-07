@@ -6,18 +6,18 @@ import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
-import Owgc from '../../assets/Owgc.gif';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
 
 const App = () => {
+
   const [ingredients, setIngredients] = useState([])
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
+  
   useEffect(() => {
     setIsLoading(true)
     const getIngredients = async () => {
@@ -56,29 +56,40 @@ const App = () => {
     audio.play()
   }
 
-  const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts}/> </div> : null 
+  const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts} alt="divine-beasts-img" /> </div> : null 
 
   return (
     <main className="main-container">
       <header>
         <Link to="/">
-        <h1 className="header-title">Calamity Kitchen</h1>
+          <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
       </header>
-      {error && <p className="app-error">{error}</p>}
-      {loading}
+        {error && <p className="app-error">{error}</p>}
+        {loading}
       <Switch>
-        <Route exact path="/" render={() => {
-          return <div>
-              <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
-              <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
+        <Route 
+          exact path="/" 
+          render={() => {
+            return <div>
+              <Dropdown 
+                allCookingEffects={allCookingEffects} 
+                handleEffectSelect={handleEffectSelect} 
+                cookingEffect={cookingEffect}
+              />
+              <Ingredients 
+                ingredients={!cookingEffect ? ingredients : filteredIngredients} 
+              />
             </div>
-        }} />
-        <Route exact path="/ingredient/:id" render={({ match }) => {
-          const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-
-          return <IngredientDetails {...ingredientToRender} />
-        }}/>
+          }} 
+        />
+        <Route 
+          exact path="/ingredient/:id" 
+          render={({ match }) => {
+            const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
+            return <IngredientDetails {...ingredientToRender} />
+          }}
+        />
         <Route path="*" component={Error} />
       </ Switch>
     </main>
