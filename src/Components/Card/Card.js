@@ -7,7 +7,7 @@ const Card = ({ name, cooking_effect, image, id }) => {
 
   return (
     <Link to={`/ingredient/${id}`}>
-      <div className="card">
+      <div className="card" >
         <h2 className="ingredient-name">{name}</h2>
         <img className="ingredient-image" src={image} alt={name} />
         <p className="cooking-effect">Cooking Effect: {cooking_effect} </p>

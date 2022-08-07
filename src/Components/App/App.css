@@ -38,3 +38,19 @@ header {
   font-size: 1.2em;
   padding-top: 0.5em;
 }
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-msg {
+  font-family: 'HyliaSerifBeta-Regular';
+  text-align: center;
+  font-size: xx-large;
+}
+
+.loading-img {
+  height: 6em;
+}
