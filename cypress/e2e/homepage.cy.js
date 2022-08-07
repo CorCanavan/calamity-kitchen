@@ -28,7 +28,6 @@ describe('Homepage user flows', () => {
     cy.get('.loading-img').should('have.attr', 'src')
   })
 
-
   it('should display correct elements within ingredient cards', () => {
     cy.get('.card').first().contains('h2', 'blue nightshade')
     cy.get('.card').first().find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/blue_nightshade/image')
@@ -50,6 +49,11 @@ describe('Homepage user flows', () => {
     cy.get('.card').last().contains('h2', 'bladed rhino beetle')
     cy.get('.card').last().find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/bladed_rhino_beetle/image')
     cy.get('.card').last().contains('p', 'attack up')
+  })
+
+  it('should be able to filter ingredient cards by different cooking effects', () => {
+    cy.get('select').select('heat resistance')
+    cy.get('.ingredients-container').find('.card').should('have.length', 1)
   })
 
   it('should display an error message if ingredients are unable to load due to 400 error', () => {
