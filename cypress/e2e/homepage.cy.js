@@ -23,6 +23,12 @@ describe('Homepage user flows', () => {
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
 
+  it('should display Loading message and image while content is loading', () => {
+    cy.get('.loading').contains('p', 'Loading...')
+    cy.get('.loading-img').should('have.attr', 'src')
+  })
+
+
   it('should display correct elements within ingredient cards', () => {
     cy.get('.card').first().contains('h2', 'blue nightshade')
     cy.get('.card').first().find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/blue_nightshade/image')

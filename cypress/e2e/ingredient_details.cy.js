@@ -15,6 +15,12 @@ describe('Ingredient Details page', () => {
     cy.url().should('eq', 'http://localhost:3000/ingredient/198')
   })
 
+  it('should display Loading message and image while content is loading', () => {
+    cy.visit('http://localhost:3000/ingredient/198')
+    cy.get('.loading').contains('p', 'Loading...')
+    cy.get('.loading-img').should('have.attr', 'src')
+  })
+
   it('should display more information about the clicked ingredient', () => {
     cy.get('.details-info').contains('h2', 'blue nightshade')
     cy.get('.details-info').contains('p', 'materials')
