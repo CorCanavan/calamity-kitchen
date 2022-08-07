@@ -28,5 +28,6 @@ export default Dropdown;
 
 Dropdown.propTypes = {
   allCookingEffects: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleEffectSelect: PropTypes.func.isRequired
+  handleEffectSelect: PropTypes.func.isRequired,
+  cookingEffect: PropTypes.string
 }
