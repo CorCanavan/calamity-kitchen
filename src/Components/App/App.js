@@ -7,7 +7,8 @@ import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import Owgc from '../../assets/Owgc.gif';
-import cookingSound from '../../assets/cookingSuccess.mp3';
+import cookingJingle from '../../assets/cookingJingle.mp3';
+import divineBeasts from '../../assets/divine_beasts.png';
 
 const App = () => {
   const [ingredients, setIngredients] = useState([])
@@ -42,12 +43,11 @@ const App = () => {
       } catch (error) {
         setError('Uh oh! Something went wrong, please try again later.')
       }
-      // setIsLoading(false)
     } 
     getIngredients()
   }, [])
 
-  const audio = new Audio(cookingSound)
+  const audio = new Audio(cookingJingle)
 
   const handleEffectSelect = (effect) => {
     setCookingEffect(effect)
@@ -55,6 +55,8 @@ const App = () => {
     setFilteredIngredients(filtered)
     audio.play()
   }
+
+  const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts}/> </div> : null 
 
   return (
     <main className="main-container">
@@ -64,11 +66,10 @@ const App = () => {
         </Link>
       </header>
       {error && <p className="app-error">{error}</p>}
-      {isLoading && <img src={Owgc}/>}
+      {loading}
       <Switch>
         <Route exact path="/" render={() => {
           return <div>
-            {/* {isLoading && <img src={Owgc}/>} */}
               <Dropdown allCookingEffects={allCookingEffects} handleEffectSelect={handleEffectSelect} />
               <Ingredients ingredients={!cookingEffect ? ingredients : filteredIngredients} />
             </div>
