@@ -9,7 +9,7 @@ const Card = ({ name, cooking_effect, image, id }) => {
     <Link to={`/ingredient/${id}`}>
       <div className="card" >
         <h2 className="ingredient-name">{name}</h2>
-        <img className="ingredient-image" src={image} alt={name} />
+        <img className="ingredient-image" src={image} alt={`${name} image`} />
         <p className="cooking-effect">Cooking Effect: {cooking_effect} </p>
       </div>
     </ Link>
