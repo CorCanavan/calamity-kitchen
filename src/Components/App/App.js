@@ -37,7 +37,7 @@ const App = () => {
           }, []).sort()
           setIngredients(formattedIngredients)
           setAllCookingEffects(cookingEffects);
-          // setIsLoading(false)
+          setIsLoading(false)
       } catch (error) {
         setError('Uh oh! Something went wrong, please try again later.')
       }
