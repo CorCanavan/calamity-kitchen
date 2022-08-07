@@ -2,7 +2,7 @@ import React from 'react';
 import './Dropdown.css';
 import PropTypes from 'prop-types';
 
-const Dropdown = ({ allCookingEffects, handleEffectSelect }) => {
+const Dropdown = ({ allCookingEffects, handleEffectSelect, cookingEffect }) => {
 
   const capitalizeCookingEffect = (effectString) => {
     const revisedEffect = effectString.split(" ")
@@ -15,8 +15,8 @@ const Dropdown = ({ allCookingEffects, handleEffectSelect }) => {
 
   return (
       <form>
-        <select onChange={(e) => handleEffectSelect(e.target.value)}>
-          <option value="select">Select a Cooking Effect:</option>
+        <select name="selectEffect" id="selectEffect" onChange={(e) => handleEffectSelect(e.target.value)} value={cookingEffect}>
+          <option value="default" disabled>Select a Cooking Effect:</option>
           <option value="">All Cooking Effects</option>
             {cookingEffectOptions}
         </select>

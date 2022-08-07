@@ -76,6 +76,7 @@ const App = () => {
               <Dropdown 
                 allCookingEffects={allCookingEffects} 
                 handleEffectSelect={handleEffectSelect} 
+                cookingEffect={cookingEffect}
               />
               <Ingredients 
                 ingredients={!cookingEffect ? ingredients : filteredIngredients} 
