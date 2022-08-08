@@ -15,7 +15,7 @@ describe('Ingredient Details page', () => {
     cy.url().should('eq', 'http://localhost:3000/ingredient/198')
   })
 
-  it('should display Loading message and image while content is loading', () => {
+  it('should display Loading message and image while details are loading', () => {
     cy.visit('http://localhost:3000/ingredient/198')
     cy.get('.loading').contains('p', 'Loading...')
     cy.get('.loading-img').should('have.attr', 'src')
@@ -71,5 +71,18 @@ describe('Ingredient Details page', () => {
     cy.visit('http://localhost:3000/ingredient/198')
     cy.get('.app-error').contains('p', 'Uh oh! Something went wrong, please try again later.')
     cy.get('.details-container').find('.details-img').should('be.empty')
+  })
+
+  it('should render 404 page if user enters URL that does not exist', () => {
+    cy.visit('http://localhost:3000/bunnies')
+
+    cy.get('.error-page').contains('h2', '404 Error')
+    cy.get('.error-page-msg').should('contain', 'Uh oh! This page doesn\'t exist.')
+
+    cy.get('.error-page-link').should('contain', 'Click here to go back to the homepage.')
+    cy.get('.error-image').should('have.attr', 'src', '/static/media/gameOver.6cb8869ccd590464a360.jpeg')
+
+    cy.get('.error-page-link').click()
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 })

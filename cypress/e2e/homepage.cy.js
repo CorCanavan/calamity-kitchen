@@ -78,7 +78,7 @@ describe('Homepage user flows', () => {
     cy.get('.ingredients-container').should('be.empty')
   })
 
-  it('should display 404 page if user enters URL that does not exist', () => {
+  it('should render 404 page if user enters URL that does not exist', () => {
     cy.visit('http://localhost:3000/cats')
 
     cy.get('.error-page').contains('h2', '404 Error')
