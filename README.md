@@ -56,9 +56,8 @@ Visit the app at the deployed link [here](https://calamity-kitchen.herokuapp.com
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
 - A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects
 
-## Ilustrations
-Filtering Functionality:
-![Filtering_Demo.mov](https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov)
+## Ilustrations: Filtering (make sure sound is on!): 
+https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov
 
 Ingredient Details Page:
 
