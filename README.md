@@ -56,10 +56,11 @@ Visit the app at the deployed link [here](https://calamity-kitchen.herokuapp.com
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
 - A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects
 
-## Ilustrations: Filtering (make sure sound is on!): 
+### Ilustrations: Filtering (make sure sound is on!): 
 https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov
 
-Ingredient Details Page:
+### Ilustrations: Ingredient Details Page: 
+https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-80ef-3cb5e65cc956.mov
 
 ## Future Features
 I love the game *Zelda: Breath of the Wild* and plan on continuing to build out this app to be a resource for gamers who would like to keep track of recipes as well. Future features I want to add include:
