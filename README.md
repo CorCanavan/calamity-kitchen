@@ -38,7 +38,7 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
   - REST APIs
 
 ## Deployed Link 
-Visit the app at the deployed link [here](https://calamity-kitchen.herokuapp.com/). 
+Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)! 
 
 ## Set Up
 1. Clone this [repository](https://github.com/CorCanavan/calamity-kitchen).
