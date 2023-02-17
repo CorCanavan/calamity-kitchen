@@ -8,7 +8,7 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
   return (
     <div className="details-wrapper">
       <section className="details-container">
-        <article className="ingredient-info">
+        <article className="ingredient-info">        
           <div className="img-wrapper">
             <img className="details-img" src={image} alt={name}/>
           </div>
