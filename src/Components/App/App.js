@@ -5,6 +5,7 @@ import Ingredients from '../Ingredients/Ingredients';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
+import Header from '../Header/Header';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
@@ -60,18 +61,30 @@ const App = () => {
 
   return (
     <main className="main-container">
-      <header>
+      {/* <header>
         <Link to="/">
           <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
-      </header>
-        {error && <p className="app-error">{error}</p>}
-        {loading}
+      </header> */}
+        {/* <Header /> */}
+        {/* {error && <p className="app-error">{error}</p>}
+        {loading} */}
       <Switch>
-        <Route 
+      {error && <p className="app-error">{error}</p>}
+      {loading}
+      <Route 
           exact path="/" 
           render={() => {
             return <div>
+    
+            </div>
+          }} 
+        />
+        <Route 
+          exact path="/main" 
+          render={() => {
+            return <div>
+              <Header />
               <Dropdown 
                 allCookingEffects={allCookingEffects} 
                 handleEffectSelect={handleEffectSelect} 
@@ -87,7 +100,10 @@ const App = () => {
           exact path="/ingredient/:id" 
           render={({ match }) => {
             const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-            return <IngredientDetails {...ingredientToRender} />
+            return <div>
+              <Header />
+              <IngredientDetails {...ingredientToRender} />
+            </div>
           }}
         />
         <Route path="*" component={Error} />

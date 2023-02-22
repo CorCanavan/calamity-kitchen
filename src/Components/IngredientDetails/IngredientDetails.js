@@ -22,7 +22,7 @@ const IngredientDetails = ({ category, name, cooking_effect, description, common
           </div>
         </article>
         <article className="button-container">
-          <Link to="/" className="link">
+          <Link to="/main" className="link">
             <button className="back-btn">BACK</button>
           </ Link>
         </article>
