@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-header {
+/* header {
   background-color: rgb(118, 118, 118, .6);
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ header {
   text-align: center;
   color: #7EF0F4;
   text-shadow: 2px 2px #536f50;
-}
+} */
 
 .main-container {
   background-image: url('../../assets/Picture1.png');
