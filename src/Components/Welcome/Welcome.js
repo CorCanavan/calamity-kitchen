@@ -10,7 +10,9 @@ const Welcome = () => {
         <p className="welcome-blurb">
         Blurb about app. 
         </p>
-        <img className="welcome-gif" src={Owgc} alt="Link cooking gif" />
+        <div className="gif-wrapper">
+          <img className="welcome-gif" src={Owgc} alt="Link cooking gif" />
+        </div>
         <Link to="/main">
           <button className="lets-get-cooking-btn">Let's Get Cooking!</button>
         </Link>

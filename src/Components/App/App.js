@@ -68,11 +68,8 @@ const App = () => {
         </Link>
       </header> */}
         {/* <Header /> */}
-        {/* {error && <p className="app-error">{error}</p>}
-        {loading} */}
+        {error && <p className="app-error">{error}</p>}
       <Switch>
-      {error && <p className="app-error">{error}</p>}
-      {loading}
       <Route 
           exact path="/" 
           render={() => {
@@ -86,6 +83,7 @@ const App = () => {
           render={() => {
             return <div>
               <Header />
+              {loading}
               <Dropdown 
                 allCookingEffects={allCookingEffects} 
                 handleEffectSelect={handleEffectSelect} 
@@ -103,6 +101,7 @@ const App = () => {
             const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
             return <div>
               <Header />
+              {loading}
               <IngredientDetails {...ingredientToRender} />
             </div>
           }}
