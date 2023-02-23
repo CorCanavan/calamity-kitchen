@@ -2,19 +2,22 @@
   font-family: 'HyliaSerifBeta-Regular';
   /* background-color: rgb(118, 118, 118, .6); */
   display: flex;
-  /* justify-content: center; */
-  align-items: center;
+  justify-content: center;
+  /* align-items: center; */
   height: 100vh;
   background-color: rgb(118, 118, 118, .6);
+  color: white;
 }
 
 .welcome-container {
-  height: 51vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
+  border: 2px solid red;
+  /* width: 60%; */
 }
 
 .welcome-title {
@@ -23,6 +26,14 @@
   text-align: center;
   color: white;
   text-shadow: 2px 2px #536f50;
+}
+
+.blurb-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
 }
 
 .gif-wrapper {

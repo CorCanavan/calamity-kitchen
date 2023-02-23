@@ -7,9 +7,11 @@ const Welcome = () => {
     <section className="welcome-wrapper">
       <section className="welcome-container">
         <h1 className="welcome-title">Welcome to Calamity Kitchen</h1>
-        <p className="welcome-blurb">
-        Blurb about app. 
-        </p>
+        <div className="blurb-wrapper">
+          <p className="welcome-blurb">
+          In the video game <i>Zelda: Breath of the Wild</i>, cooking ingredients together with the same effects produces meals with a powerful boost. Once you click through below, use the dropdown to filter ingredients by specific effect. Click on an ingredient card for more details - where to find it in the game, how many hearts it restores, and more.
+          </p>
+        </div>
         <div className="gif-wrapper">
           <img className="welcome-gif" src={Owgc} alt="Link cooking gif" />
         </div>
