@@ -11,7 +11,7 @@
 
 .welcome-container {
   /* height: 80vh; */
-  height: 70vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,8 +53,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  width: 80%;
+  /* text-align: center; */
+  width: 85%;
+  font-size: 18px;
 }
 
 .welcome-blurb {
@@ -111,20 +112,34 @@
     /* border: 3px solid blue; */
   }
   
+  .blurb-wrapper {
+    font-size: 16px;
+    width: 90%;
+  }
+
   .welcome-gif {
     width: 70%;
+  }
+
+  .welcome-container {
+    height: 85vh;
   }
 
 }
 
 @media screen and (max-width: 399px) {
   .welcome-container {
-    height: 85vh;
+    height: 90vh;
   }
 
   .gif-wrapper {
     width: 80%;
     /* border: 3px solid indigo; */
+  }
+
+  .blurb-wrapper {
+    font-size: 14px;
+    width: 90%;
   }
   
   .welcome-gif {

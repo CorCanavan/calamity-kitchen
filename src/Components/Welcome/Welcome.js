@@ -10,7 +10,7 @@ const Welcome = () => {
         <div className="blurb-wrapper">
           <p className="welcome-blurb">
           In the video game <i>Zelda: Breath of the Wild</i>, there’s enough to worry about between freeing the Divine Beasts and defeating Calamity Ganon, so we’re here to take the stress out of cooking in the game! 
-          </p>
+          </p><br></br>
           <p className="welcome-blurb">
           If you’ve played the game before, you may know that cooking can yield you a plentiful meal with strong effects, or you may end up with the dreaded “dubious food” - a concoction with no beneficial effects that causes Link to squirm as he eats! Click the button below to use the dropdown to filter ingredients by effect. Cooking ingredients together with similar effects produces meals with a powerful boost. Click on an ingredient card for more details - where to find it in the game, how many hearts it restores, and more.
           </p>
