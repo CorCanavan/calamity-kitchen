@@ -1,5 +1,5 @@
 import './Welcome.css';
-import Owgc from '../../assets/Owgc.gif';
+import cookingLink from '../../assets/cookingLink.gif';
 import { Link } from 'react-router-dom';
 
 const Welcome = () => {
@@ -13,7 +13,7 @@ const Welcome = () => {
           </p>
         </div>
         <div className="gif-wrapper">
-          <img className="welcome-gif" src={Owgc} alt="Link cooking gif" />
+          <img className="welcome-gif" src={cookingLink} alt="Link cooking gif" />
         </div>
         <Link to="/home">
           <button className="lets-get-cooking-btn">Let's Get Cooking!</button>
