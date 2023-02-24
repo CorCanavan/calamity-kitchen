@@ -15,7 +15,7 @@ const Welcome = () => {
         <div className="gif-wrapper">
           <img className="welcome-gif" src={Owgc} alt="Link cooking gif" />
         </div>
-        <Link to="/main">
+        <Link to="/home">
           <button className="lets-get-cooking-btn">Let's Get Cooking!</button>
         </Link>
       </section>

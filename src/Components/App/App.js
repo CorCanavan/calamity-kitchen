@@ -68,7 +68,7 @@ const App = () => {
         </Link>
       </header> */}
         {/* <Header /> */}
-        {error && <p className="app-error">{error}</p>}
+        {/* {error && <p className="app-error">{error}</p>} */}
       <Switch>
       <Route 
           exact path="/" 
@@ -79,11 +79,12 @@ const App = () => {
           }} 
         />
         <Route 
-          exact path="/main" 
+          exact path="/home" 
           render={() => {
             return <div>
               <Header />
               {loading}
+              {error && <p className="app-error">{error}</p>}
               <Dropdown 
                 allCookingEffects={allCookingEffects} 
                 handleEffectSelect={handleEffectSelect} 
@@ -102,6 +103,7 @@ const App = () => {
             return <div>
               <Header />
               {loading}
+              {error && <p className="app-error">{error}</p>}
               <IngredientDetails {...ingredientToRender} />
             </div>
           }}
