@@ -143,3 +143,38 @@
     margin-top: 0.3em;
   }
 }
+
+
+@media screen and (max-width: 399px) {
+  .welcome-container {
+    height: 90vh;
+  }
+
+  .gif-wrapper {
+    width: 80%;
+  }
+
+  .welcome-title {
+    font-size: 1.5em;
+  }
+
+  .blurb-wrapper {
+    font-size: 14px;
+    width: 95%;
+  }
+  
+  .welcome-gif {
+    width: 80%;
+  }
+
+  .lets-get-cooking-btn {
+    margin-top: 0.4em;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .welcome-title {
+    font-size: 1.2em;
+  }
+}
+
