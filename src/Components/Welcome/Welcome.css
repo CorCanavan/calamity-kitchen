@@ -38,6 +38,7 @@
   /* color:  rgb(0, 0, 0, .67) */
   /* color: white; */
   text-shadow: 2px 2px #536f50;
+  letter-spacing: .05em;
 }
 
 @keyframes glow {
