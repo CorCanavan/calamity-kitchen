@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Ingredients from '../Ingredients/Ingredients';
 import IngredientDetails from '../IngredientDetails/IngredientDetails';
 import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
+import Header from '../Header/Header';
+import Welcome from '../Welcome/Welcome';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
@@ -60,18 +62,29 @@ const App = () => {
 
   return (
     <main className="main-container">
-      <header>
+      {/* <header>
         <Link to="/">
           <h1 className="header-title">Calamity Kitchen</h1>
         </Link>
-      </header>
-        {error && <p className="app-error">{error}</p>}
-        {loading}
+      </header> */}
+        {/* <Header /> */}
+        {/* {error && <p className="app-error">{error}</p>} */}
       <Switch>
-        <Route 
+      <Route 
           exact path="/" 
           render={() => {
             return <div>
+              <Welcome />
+            </div>
+          }} 
+        />
+        <Route 
+          exact path="/home" 
+          render={() => {
+            return <div>
+              <Header />
+              {loading}
+              {error && <p className="app-error">{error}</p>}
               <Dropdown 
                 allCookingEffects={allCookingEffects} 
                 handleEffectSelect={handleEffectSelect} 
@@ -87,7 +100,12 @@ const App = () => {
           exact path="/ingredient/:id" 
           render={({ match }) => {
             const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-            return <IngredientDetails {...ingredientToRender} />
+            return <div>
+              <Header />
+              {loading}
+              {error && <p className="app-error">{error}</p>}
+              <IngredientDetails {...ingredientToRender} />
+            </div>
           }}
         />
         <Route path="*" component={Error} />

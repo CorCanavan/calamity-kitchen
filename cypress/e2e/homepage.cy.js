@@ -10,11 +10,11 @@ describe('Homepage user flows', () => {
       statusCode: 200,
       fixture: "creatures"
     })
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/home')
   })
 
   it('should render the site header, dropdown menu, and all ingredient cards on page load', () => {
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/home')
     cy.get('.header-title').contains('h1', 'Calamity Kitchen')
 
     cy.get('form').find('select').should('have.length', 1)
@@ -88,7 +88,7 @@ describe('Homepage user flows', () => {
     cy.get('.error-image').should('have.attr', 'src', '/static/media/gameOver.6cb8869ccd590464a360.jpeg')
 
     cy.get('.error-page-link').click()
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/home')
   })
 
   it('should be able to click on an ingredient card and be brought to an Ingredient Details page with a different URL', () => {

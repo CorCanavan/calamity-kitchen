@@ -10,7 +10,7 @@ describe('Ingredient Details page', () => {
       statusCode: 200,
       fixture: "creatures"
     })
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/home')
     cy.get('.card').first().click()
     cy.url().should('eq', 'http://localhost:3000/ingredient/198')
   })
@@ -35,7 +35,7 @@ describe('Ingredient Details page', () => {
 
   it('should contain a back button to navigate back to homepage', () => {
     cy.contains('BACK').click()
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/home')
 
     cy.get('form').should('be.visible')
     cy.get('.ingredients-container').should('exist')
@@ -43,7 +43,7 @@ describe('Ingredient Details page', () => {
 
   it('should also be able to navigate back to homepage by clicking on header title', () => {
     cy.get('.header-title').click()
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/home')
 
     cy.get('form').should('be.visible')
     cy.get('.ingredients-container').should('exist')
@@ -83,6 +83,6 @@ describe('Ingredient Details page', () => {
     cy.get('.error-image').should('have.attr', 'src', '/static/media/gameOver.6cb8869ccd590464a360.jpeg')
 
     cy.get('.error-page-link').click()
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/home')
   })
 })
