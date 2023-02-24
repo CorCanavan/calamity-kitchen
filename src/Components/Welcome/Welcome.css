@@ -29,6 +29,25 @@
   text-shadow: 2px 2px #536f50;
 }
 
+.calamity-kitchen {
+  /* -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate; */
+  animation: glow 3s ease-in-out infinite alternate;
+  /* text-shadow: 4px 4px black; */
+  /* color: black; */
+  /* color:  rgb(0, 0, 0, .67) */
+  /* color: white; */
+  text-shadow: 2px 2px #536f50;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #adefed, 0 0 20px #7EF0F4, 0 0 30px #7EF0F4, 0 0 40px #7EF0F4, 0 0 50px #7EF0F4, 0 0 60px #7EF0F4, 0 0 70px #7EF0F4;
+  }
+  to {
+    text-shadow: 0 0 20px #4eb9d2, 0 0 30px #4eb9d2, 0 0 40px #4eb9d2, 0 0 50px #4eb9d2, 0 0 60px #4eb9d2, 0 0 70px #4eb9d2, 0 0 80px #4eb9d2;
+  }
+}
 .blurb-wrapper {
   display: flex;
   flex-direction: column;

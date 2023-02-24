@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <section className="welcome-wrapper">
       <section className="welcome-container">
-        <h1 className="welcome-title">Welcome to Calamity Kitchen</h1>
+        <h1 className="welcome-title">Welcome to <span className="calamity-kitchen">Calamity Kitchen</span></h1>
         <div className="blurb-wrapper">
           <p className="welcome-blurb">
           In the video game <i>Zelda: Breath of the Wild</i>, cooking ingredients together with the same effect produces meals with a powerful boost. Click the button below to use the dropdown to filter ingredients by specific effect. Click on an ingredient card for more details - where to find it in the game, how many hearts it restores, and more.
