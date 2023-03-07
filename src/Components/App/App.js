@@ -62,13 +62,6 @@ const App = () => {
 
   return (
     <main className="main-container">
-      {/* <header>
-        <Link to="/">
-          <h1 className="header-title">Calamity Kitchen</h1>
-        </Link>
-      </header> */}
-        {/* <Header /> */}
-        {/* {error && <p className="app-error">{error}</p>} */}
       <Switch>
       <Route 
           exact path="/" 
