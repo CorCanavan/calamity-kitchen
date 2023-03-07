@@ -60,6 +60,28 @@ const App = () => {
     audio.play()
   }
 
+  // handleSearchValueInput 
+  // takes in typed input, .toLowerCase it
+  // FIRST THOUGHT:
+  // check if cookingEffect is truthy, if so filter over filteredIngredients
+  // if cookingEffect is falsy, filter over ingredients 
+
+  const handleSearchValueInput = (value) => {
+    const formattedValue = value.toLowerCase();
+    setSearchValue(formattedValue);
+    if (!cookingEffect) {
+      const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
+      setFilteredIngredients(allIngredientsByInput)
+    } else {
+      const filteredIngredientsByInput = filteredIngredients.filter(ingredient => ingredient.name.includes(formattedValue))
+      setFilteredIngredients(filteredIngredientsByInput)
+    }
+    // if (cookingEffect) {
+    //   const filteredIngredientsByInput = filteredIngredients.filter(ingredient => ingredient.name.includes(formattedValue))
+    //   setFilteredIngredients(filteredIngredientsByInput)
+    // }
+  }
+
   const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts} alt="divine-beasts-img" /> </div> : null 
 
   return (
@@ -85,9 +107,14 @@ const App = () => {
                 handleEffectSelect={handleEffectSelect} 
                 cookingEffect={cookingEffect}
               />
-              <Search />
+              <Search 
+                handleSearchValueInput={handleSearchValueInput} 
+                searchValue={searchValue}
+              />
               <Ingredients 
-                ingredients={!cookingEffect ? ingredients : filteredIngredients} 
+                ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
+                // update ternary - if cookingEffect or searchValue are truthy show filteredIngredients?
+                // if filteredIngredients.length > 0 : filteredIngredients?
               />
             </div>
           }} 
