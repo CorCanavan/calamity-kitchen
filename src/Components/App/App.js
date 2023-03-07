@@ -17,6 +17,7 @@ const App = () => {
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
+  const [searchValue, setSearchValue] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   
