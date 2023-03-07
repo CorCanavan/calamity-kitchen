@@ -7,6 +7,7 @@ import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
+import Search from '../Search/Search';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
@@ -84,6 +85,7 @@ const App = () => {
                 handleEffectSelect={handleEffectSelect} 
                 cookingEffect={cookingEffect}
               />
+              <Search />
               <Ingredients 
                 ingredients={!cookingEffect ? ingredients : filteredIngredients} 
               />
