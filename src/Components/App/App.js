@@ -62,31 +62,14 @@ const App = () => {
   }
 
   const handleSearchValueInput = (value) => {
-    // const formattedValue = value.toLowerCase();
-    // console.log("formattedValue", formattedValue)
-    // console.log("value", value)
-    // if (value) {
-    //   const formattedValue = value.toLowerCase();
-    //   setSearchValue(formattedValue);
-    // } else {
-    //   setSearchValue("")
-    // }
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
-
     if (!cookingEffect && searchValue) {
       const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
       setFilteredIngredients(allIngredientsByInput)
-      /// ^ works as expected
-    } else if (cookingEffect && searchValue) {
+    } else {
       const filteredIngredientsByInput = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect && ingredient.name.includes(formattedValue))
       setFilteredIngredients(filteredIngredientsByInput)
-    // } else if (cookingEffect && !searchValue) {
-    //   // handleEffectSelect(cookingEffect)
-    //   console.log("searchValue", searchValue)
-    //   console.log("filteredIng", filteredIngredients)
-    //   const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect)
-    //   setFilteredIngredients(filtered)
     }
   }
 
