@@ -57,6 +57,7 @@ const App = () => {
     setCookingEffect(effect)
     const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === effect)
     setFilteredIngredients(filtered)
+    setSearchValue("")
     audio.play()
   }
 
