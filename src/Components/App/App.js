@@ -112,7 +112,7 @@ const App = () => {
                 handleSearchValueInput={handleSearchValueInput} 
                 searchValue={searchValue}
               />
-              {searchValue && !filteredIngredients.length && <p>No ingredients match your search! Try searching by a different name, or filtering by cooking effect. </p>}
+              {searchValue && !filteredIngredients.length && <p className="no-ingr-msg">No ingredients match your search! Try searching by a different name, or filtering by cooking effect. </p>}
               <Ingredients 
                 ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
               />
