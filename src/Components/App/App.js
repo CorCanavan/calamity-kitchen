@@ -61,12 +61,6 @@ const App = () => {
     audio.play()
   }
 
-  // handleSearchValueInput 
-  // takes in typed input, .toLowerCase it
-  // FIRST THOUGHT:
-  // check if cookingEffect is truthy, if so filter over filteredIngredients
-  // if cookingEffect is falsy, filter over ingredients 
-
   const handleSearchValueInput = (value) => {
     // const formattedValue = value.toLowerCase();
     // console.log("formattedValue", formattedValue)
@@ -127,8 +121,6 @@ const App = () => {
               />
               <Ingredients 
                 ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
-                // update ternary - if cookingEffect or searchValue are truthy show filteredIngredients?
-                // if filteredIngredients.length > 0 : filteredIngredients?
               />
             </div>
           }} 
