@@ -64,7 +64,9 @@ const App = () => {
   const handleSearchValueInput = (value) => {
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
-    if (!cookingEffect && searchValue) {
+    console.log("searchValueOutside", searchValue)
+    console.log("formattedValueOutside", formattedValue)
+    if (!cookingEffect && formattedValue) {
       console.log("formattedValue1", formattedValue)
       console.log('searchValue1', searchValue)
       const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
