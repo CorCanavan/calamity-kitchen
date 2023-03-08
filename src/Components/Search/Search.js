@@ -5,6 +5,7 @@ const Search = ({handleSearchValueInput, searchValue}) => {
   return (
     <form className="search-form"> 
       <input 
+      className="search-input"
       type="text" 
       name="searchValue"
       placeholder="Search by Ingredient Name"
