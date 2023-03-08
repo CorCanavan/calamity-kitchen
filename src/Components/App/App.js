@@ -65,11 +65,21 @@ const App = () => {
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
     if (!cookingEffect && searchValue) {
+      console.log("formattedValue1", formattedValue)
+      console.log('searchValue1', searchValue)
       const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
+      console.log("formattedValue2", formattedValue)
+      console.log('searchValue2', searchValue)
       setFilteredIngredients(allIngredientsByInput)
+      // unable to filter by one letter when first typing
     } else {
+      console.log("formattedValue3", formattedValue)
+      console.log('searchValue3', searchValue)
       const filteredIngredientsByInput = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect && ingredient.name.includes(formattedValue))
       setFilteredIngredients(filteredIngredientsByInput)
+      console.log("formattedValue4", formattedValue)
+      console.log('searchValue4', searchValue)
+      // filters with one letter entered
     }
   }
 
@@ -102,6 +112,7 @@ const App = () => {
                 handleSearchValueInput={handleSearchValueInput} 
                 searchValue={searchValue}
               />
+              {searchValue && !filteredIngredients.length && <p>No ingredients match your search! Try searching by a different name, or filtering by cooking effect. </p>}
               <Ingredients 
                 ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
               />
