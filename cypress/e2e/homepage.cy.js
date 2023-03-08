@@ -13,12 +13,13 @@ describe('Homepage user flows', () => {
     cy.visit('http://localhost:3000/home')
   })
 
-  it('should render the site header, dropdown menu, and all ingredient cards on page load', () => {
+  it('should render the site header, dropdown menu, search bar, and all ingredient cards on page load', () => {
     cy.url().should('eq', 'http://localhost:3000/home')
     cy.get('.header-title').contains('h1', 'Calamity Kitchen')
 
     cy.get('form').find('select').should('have.length', 1)
     cy.get('option[value="default"]').should('contain', 'Select a Cooking Effect')
+    cy.get('.search-form').find('.search-input').should('have.attr', 'placeholder', 'Search by Ingredient Name')
     
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
