@@ -57,6 +57,15 @@ describe('Homepage user flows', () => {
     cy.get('.ingredients-container').find('.card').should('have.length', 1)
   })
 
+  it('should be able to find ingredient card by name using the search bar', () => {
+    cy.get('.search-input').type('beetle')
+    cy.get('.ingredients-container').find('.card').should('have.length', 1)
+
+    cy.get('.card').contains('h2', 'bladed rhino beetle')
+    cy.get('.card').find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/bladed_rhino_beetle/image')
+    cy.get('.card').contains('p', 'attack up')
+  })
+
   it('should display an error message if ingredients are unable to load due to 400 error', () => {
     cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
       statusCode: 400
