@@ -67,19 +67,32 @@ const App = () => {
   // if cookingEffect is falsy, filter over ingredients 
 
   const handleSearchValueInput = (value) => {
+    // const formattedValue = value.toLowerCase();
+    // console.log("formattedValue", formattedValue)
+    // console.log("value", value)
+    // if (value) {
+    //   const formattedValue = value.toLowerCase();
+    //   setSearchValue(formattedValue);
+    // } else {
+    //   setSearchValue("")
+    // }
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
-    if (!cookingEffect) {
+
+    if (!cookingEffect && searchValue) {
       const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
       setFilteredIngredients(allIngredientsByInput)
-    } else {
-      const filteredIngredientsByInput = filteredIngredients.filter(ingredient => ingredient.name.includes(formattedValue))
+      /// ^ works as expected
+    } else if (cookingEffect && searchValue) {
+      const filteredIngredientsByInput = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect && ingredient.name.includes(formattedValue))
       setFilteredIngredients(filteredIngredientsByInput)
+    // } else if (cookingEffect && !searchValue) {
+    //   // handleEffectSelect(cookingEffect)
+    //   console.log("searchValue", searchValue)
+    //   console.log("filteredIng", filteredIngredients)
+    //   const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect)
+    //   setFilteredIngredients(filtered)
     }
-    // if (cookingEffect) {
-    //   const filteredIngredientsByInput = filteredIngredients.filter(ingredient => ingredient.name.includes(formattedValue))
-    //   setFilteredIngredients(filteredIngredientsByInput)
-    // }
   }
 
   const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts} alt="divine-beasts-img" /> </div> : null 
