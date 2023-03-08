@@ -66,6 +66,12 @@ describe('Homepage user flows', () => {
     cy.get('.card').contains('p', 'attack up')
   })
 
+  it('should display a message if no ingredient names match the search input', () => {
+    cy.get('.search-input').type('bug')
+    cy.get('.no-ingr-msg').contains('p', 'No ingredients match your search!')
+    cy.get('.ingredients-container').should('be.empty')
+  })
+
   it('should display an error message if ingredients are unable to load due to 400 error', () => {
     cy.intercept('GET', 'https://botw-compendium.herokuapp.com/api/v2/category/materials', {
       statusCode: 400
