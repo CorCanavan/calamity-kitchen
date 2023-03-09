@@ -7,6 +7,7 @@ import Dropdown from '../Dropdown/Dropdown';
 import Error from '../Error/Error';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
+import Search from '../Search/Search';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
@@ -17,6 +18,7 @@ const App = () => {
   const [filteredIngredients, setFilteredIngredients] = useState([])
   const [allCookingEffects, setAllCookingEffects] = useState([])
   const [cookingEffect, setCookingEffect] = useState('')
+  const [searchValue, setSearchValue] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   
@@ -55,20 +57,26 @@ const App = () => {
     setCookingEffect(effect)
     const filtered = ingredients.filter(ingredient => ingredient.cooking_effect === effect)
     setFilteredIngredients(filtered)
+    setSearchValue("")
     audio.play()
+  }
+
+  const handleSearchValueInput = (value) => {
+    const formattedValue = value.toLowerCase();
+    setSearchValue(formattedValue);
+    if (!cookingEffect && formattedValue) {
+      const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
+      setFilteredIngredients(allIngredientsByInput)
+    } else {
+      const filteredIngredientsByInput = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect && ingredient.name.includes(formattedValue))
+      setFilteredIngredients(filteredIngredientsByInput)
+    }
   }
 
   const loading = isLoading ? <div className="loading"><p className="loading-msg">Loading...</p><img className="loading-img" src={divineBeasts} alt="divine-beasts-img" /> </div> : null 
 
   return (
     <main className="main-container">
-      {/* <header>
-        <Link to="/">
-          <h1 className="header-title">Calamity Kitchen</h1>
-        </Link>
-      </header> */}
-        {/* <Header /> */}
-        {/* {error && <p className="app-error">{error}</p>} */}
       <Switch>
       <Route 
           exact path="/" 
@@ -90,8 +98,13 @@ const App = () => {
                 handleEffectSelect={handleEffectSelect} 
                 cookingEffect={cookingEffect}
               />
+              <Search 
+                handleSearchValueInput={handleSearchValueInput} 
+                searchValue={searchValue}
+              />
+              {searchValue && !filteredIngredients.length && <p className="no-ingr-msg">No ingredients match your search! Try searching by a different name, or filtering by cooking effect. </p>}
               <Ingredients 
-                ingredients={!cookingEffect ? ingredients : filteredIngredients} 
+                ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
               />
             </div>
           }} 

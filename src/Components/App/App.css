@@ -15,12 +15,17 @@ a {
   height: 100vh;
 }
 
-.app-error {
+.app-error, .no-ingr-msg {
   font-family: 'HyliaSerifBeta-Regular';
   text-align: center;
   color: #C62408;
-  font-size: 1.2em;
+  font-size: 1.3em;
   padding-top: 0.5em;
+}
+
+.no-ingr-msg {
+  margin-top: 1em;
+  font-size: 1.5em;
 }
 
 .loading {

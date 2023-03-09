@@ -14,7 +14,7 @@ const Dropdown = ({ allCookingEffects, handleEffectSelect, cookingEffect }) => {
   const cookingEffectOptions = allCookingEffects.map(cookEffect => <option value={cookEffect} key={cookEffect}>{capitalizeCookingEffect(cookEffect)}</option>)
 
   return (
-      <form>
+      <form className="dropdown-form">
         <select name="selectEffect" id="selectEffect" onChange={(e) => handleEffectSelect(e.target.value)} value={cookingEffect}>
           <option value="default" disabled>Select a Cooking Effect:</option>
           <option value="">All Cooking Effects</option>

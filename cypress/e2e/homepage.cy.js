@@ -13,12 +13,13 @@ describe('Homepage user flows', () => {
     cy.visit('http://localhost:3000/home')
   })
 
-  it('should render the site header, dropdown menu, and all ingredient cards on page load', () => {
+  it('should render the site header, dropdown menu, search bar, and all ingredient cards on page load', () => {
     cy.url().should('eq', 'http://localhost:3000/home')
     cy.get('.header-title').contains('h1', 'Calamity Kitchen')
 
     cy.get('form').find('select').should('have.length', 1)
     cy.get('option[value="default"]').should('contain', 'Select a Cooking Effect')
+    cy.get('.search-form').find('.search-input').should('have.attr', 'placeholder', 'Search by Ingredient Name')
     
     cy.get('.ingredients-container').find('.card').should('have.length', 4)
   })
@@ -54,6 +55,21 @@ describe('Homepage user flows', () => {
   it('should be able to filter ingredient cards by different cooking effects', () => {
     cy.get('select').select('heat resistance')
     cy.get('.ingredients-container').find('.card').should('have.length', 1)
+  })
+
+  it('should be able to find ingredient card by name using the search bar', () => {
+    cy.get('.search-input').type('beetle')
+    cy.get('.ingredients-container').find('.card').should('have.length', 1)
+
+    cy.get('.card').contains('h2', 'bladed rhino beetle')
+    cy.get('.card').find('img').should('have.attr', 'src', 'https://botw-compendium.herokuapp.com/api/v2/entry/bladed_rhino_beetle/image')
+    cy.get('.card').contains('p', 'attack up')
+  })
+
+  it('should display a message if no ingredient names match the search input', () => {
+    cy.get('.search-input').type('bug')
+    cy.get('.no-ingr-msg').contains('p', 'No ingredients match your search!')
+    cy.get('.ingredients-container').should('be.empty')
   })
 
   it('should display an error message if ingredients are unable to load due to 400 error', () => {
