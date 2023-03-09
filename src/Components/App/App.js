@@ -64,22 +64,12 @@ const App = () => {
   const handleSearchValueInput = (value) => {
     const formattedValue = value.toLowerCase();
     setSearchValue(formattedValue);
-    console.log("searchValueOutside", searchValue)
-    console.log("formattedValueOutside", formattedValue)
     if (!cookingEffect && formattedValue) {
-      console.log("formattedValue1 if", formattedValue)
-      console.log('searchValue1 if', searchValue)
       const allIngredientsByInput = ingredients.filter(ingredient => ingredient.name.includes(formattedValue))
-      console.log("formattedValue2 if", formattedValue)
-      console.log('searchValue2 if', searchValue)
       setFilteredIngredients(allIngredientsByInput)
     } else {
-      console.log("formattedValue3 else", formattedValue)
-      console.log('searchValue3 else', searchValue)
       const filteredIngredientsByInput = ingredients.filter(ingredient => ingredient.cooking_effect === cookingEffect && ingredient.name.includes(formattedValue))
       setFilteredIngredients(filteredIngredientsByInput)
-      console.log("formattedValue4 else", formattedValue)
-      console.log('searchValue4 else', searchValue)
     }
   }
 
