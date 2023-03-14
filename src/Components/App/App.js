@@ -90,7 +90,7 @@ const App = () => {
         <Route 
           exact path="/home" 
           render={() => {
-            return <div>
+            return <div className="home-container">
               <Header />
               {loading}
               {error && <p className="app-error">{error}</p>}
