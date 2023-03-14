@@ -120,6 +120,7 @@ const App = () => {
               {loading}
               {error && <p className="app-error">{error}</p>}
               <IngredientDetails {...ingredientToRender} />
+              <Footer />
             </div>
           }}
         />
