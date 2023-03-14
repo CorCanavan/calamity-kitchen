@@ -4,13 +4,14 @@ footer {
   text-decoration: none;
   color: black;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  /* height: auto; */
 }
 
-.createdBy-info, .resources-info, .contact-info {
+.createdBy-info {
   display: flex;
   flex-direction: column;
-  padding: 2px;
+  align-items: center;
 }
 
 .createdBy-link, .resources-link {
@@ -19,5 +20,9 @@ footer {
 }
 
 .footer-name {
-  font-size: 1.2em;
+  font-size: 1.16em;
+}
+
+.contact-info {
+  padding: 2px;
 }
