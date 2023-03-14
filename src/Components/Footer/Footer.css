@@ -3,11 +3,14 @@ footer {
   font-family: 'HyliaSerifBeta-Regular';
   text-decoration: none;
   color: black;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.createdBy-info, .resources-info {
+.createdBy-info, .resources-info, .contact-info {
   display: flex;
   flex-direction: column;
+  padding: 2px;
 }
 
 .createdBy-link, .resources-link {
@@ -16,5 +19,5 @@ footer {
 }
 
 .footer-name {
-  font-size: 1.15em;
+  font-size: 1.2em;
 }
