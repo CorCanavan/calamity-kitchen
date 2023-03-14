@@ -1,4 +1,20 @@
 footer {
   background-color: rgb(118, 118, 118, .6);
   font-family: 'HyliaSerifBeta-Regular';
+  text-decoration: none;
+  color: black;
+}
+
+.createdBy-info, .resources-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.createdBy-link, .resources-link {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-name {
+  font-size: 1.15em;
 }
