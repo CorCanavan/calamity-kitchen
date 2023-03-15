@@ -1,4 +1,5 @@
 import './Search.css';
+import PropTypes from 'prop-types';
 
 const Search = ({handleSearchValueInput, searchValue}) => {
 
@@ -16,5 +17,9 @@ const Search = ({handleSearchValueInput, searchValue}) => {
   )
 }
 
-
 export default Search;
+
+Search.propTypes = {
+  handleSearchValueInput: PropTypes.func.isRequired,
+  searchValue: PropTypes.string
+}
