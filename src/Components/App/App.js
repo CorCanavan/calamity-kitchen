@@ -90,7 +90,7 @@ const App = () => {
         <Route 
           exact path="/home" 
           render={() => {
-            return <div className="home-container">
+            return <div className="content-wrapper">
               <Header />
               {loading}
               {error && <p className="app-error">{error}</p>}
@@ -115,7 +115,7 @@ const App = () => {
           exact path="/ingredient/:id" 
           render={({ match }) => {
             const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-            return <div>
+            return <div className="content-wrapper">
               <Header />
               {loading}
               {error && <p className="app-error">{error}</p>}
