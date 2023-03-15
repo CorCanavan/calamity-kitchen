@@ -21,4 +21,5 @@ export default Search;
 
 Search.propTypes = {
   handleSearchValueInput: PropTypes.func.isRequired,
+  searchValue: PropTypes.string
 }
