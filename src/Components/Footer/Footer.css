@@ -5,24 +5,13 @@ footer {
   color: black;
   display: flex;
   justify-content: right;
-  /* height: auto; */
   margin-top: auto;
 }
 
 .createdBy-info {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
-
-/* .createdBy-link {
-  text-decoration: none;
-  color: black;
-} */
-
-/* .footer-name {
-  font-size: 1.16em;
-} */
 
 .contact-info {
   padding: 4px;
@@ -41,10 +30,3 @@ footer {
   font-size: 1em;
   font-weight: normal;
 }
-/* .createdBy-link:hover {
-  transform: scale(1.1);
-} */
-
-/* .contact-info > .createdBy-link:hover, .createdBy-link:hover span {
-  transform: scale(1.1);
-} */
