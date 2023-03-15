@@ -8,6 +8,7 @@ import Error from '../Error/Error';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import Search from '../Search/Search';
+import Footer from '../Footer/Footer';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
 import divineBeasts from '../../assets/divine_beasts.png';
@@ -89,7 +90,7 @@ const App = () => {
         <Route 
           exact path="/home" 
           render={() => {
-            return <div>
+            return <div className="content-wrapper">
               <Header />
               {loading}
               {error && <p className="app-error">{error}</p>}
@@ -106,6 +107,7 @@ const App = () => {
               <Ingredients 
                 ingredients={!cookingEffect && !searchValue ? ingredients : filteredIngredients} 
               />
+              <Footer />
             </div>
           }} 
         />
@@ -113,11 +115,12 @@ const App = () => {
           exact path="/ingredient/:id" 
           render={({ match }) => {
             const ingredientToRender = ingredients.find(ingredient => ingredient.id === parseInt(match.params.id))
-            return <div>
+            return <div className="content-wrapper">
               <Header />
               {loading}
               {error && <p className="app-error">{error}</p>}
               <IngredientDetails {...ingredientToRender} />
+              <Footer />
             </div>
           }}
         />

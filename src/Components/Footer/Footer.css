@@ -1,0 +1,32 @@
+footer {
+  background-color: rgb(118, 118, 118, .6);
+  font-family: 'HyliaSerifBeta-Regular';
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: right;
+  margin-top: auto;
+}
+
+.created-by-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info {
+  padding: 4px;
+  padding-right: 10px;
+  text-align: end;
+}
+
+.created-by {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+
+.footer-name {
+  font-size: 1em;
+  font-weight: normal;
+}

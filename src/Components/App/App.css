@@ -43,3 +43,9 @@ a {
 .loading-img {
   height: 6em;
 }
+
+.content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
