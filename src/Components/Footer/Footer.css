@@ -8,7 +8,7 @@ footer {
   margin-top: auto;
 }
 
-.createdBy-info {
+.created-by-info {
   display: flex;
   flex-direction: column;
 }
