@@ -18,3 +18,7 @@ const Search = ({handleSearchValueInput, searchValue}) => {
 }
 
 export default Search;
+
+Search.propTypes = {
+  handleSearchValueInput: PropTypes.func.isRequired,
+}
