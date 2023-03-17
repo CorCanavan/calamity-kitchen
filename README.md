@@ -49,7 +49,8 @@ Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)!
 6. Enter `control + c` to stop the server at any time.
 
 ## Features
-- A user is able to see all available ingredient cards on page load 
+- A user is brought to a Welcome page on page load with a description of how to use the app and it's purpose
+- Once clicking on the "Let's Get Cooking" button, a user is brought to the homepage and is able to see all available ingredient cards on homepage load
 - A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage 
 - Classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect
 - Ingredient cards repopulate to display only those that have selected Cooking Effect
