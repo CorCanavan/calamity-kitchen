@@ -54,6 +54,8 @@ Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)!
 - A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage 
 - Classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect
 - Ingredient cards repopulate to display only those that have selected Cooking Effect
+- If a user does not know or want to search ingredients by specific Cooking Effect, a user is able to utilize the Search bar to find an ingredient by name
+- A search bar that allows a user to search for an ingredient by typing it's name, in case they do not know the specific cooking effect 
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
 - A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects
 
@@ -66,7 +68,6 @@ https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-
 
 ## Future Features
 I love the game *Zelda: Breath of the Wild* and plan on continuing to build out this app to be a resource for gamers who would like to keep track of recipes as well. Future features I want to add include:
-- A search bar that allows a user to search for an ingredient by typing it's name, in case they do not know the specific cooking effect 
 - A My Recipes page with a form component that let's a user add recipes they've created, select which ingredients were used, and any additional comments or notes.
 - Option to delete Recipe Cards from the My Recipes page
 
