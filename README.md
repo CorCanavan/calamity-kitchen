@@ -10,7 +10,7 @@
 - [Features](#features)
 - [Future Features](#future-features)
 - [Reflections](#reflections)
-- [Contributors](#contributors)
+- [Contributor](#contributor)
 - [Resources](#resources)
 - [Project Specifications](#project-specifications)
 
@@ -58,11 +58,11 @@ https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-
 
 ## Features
 - A user is first brought to a Welcome page with a description of how to use the app and it's purpose
-- Once clicking on the "Let's Get Cooking" button, a user is brought to the homepage and is able to see all available ingredient cards on Homepage load, a Dropdown to filter ingredients by Cooking Effect, as well as a Search bar to find an ingredient by typing in it's name
+- Once clicking on the "Let's Get Cooking" button, a user is brought to the homepage and is able to see all available ingredient cards on homepage load, a Dropdown to filter ingredients by Cooking Effect, as well as a Search bar to find an ingredient by typing in it's name
 - A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage; classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect
 - A user is able to utilize the Search bar to find an ingredient by typing it's name, in case they do not know the specific Cooking Effect 
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
-- A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects
+- A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects, or can search for an ingredient by name using the Search bar
 
 ## Future Features
 I love the game *Zelda: Breath of the Wild* and plan on continuing to build out this app to be a resource for gamers who would like to keep track of recipes as well. Future features I want to add include:
@@ -78,7 +78,7 @@ I love the game *Zelda: Breath of the Wild* and plan on continuing to build out 
 - The tight timeframe! I feel very passionately about this app and had so many thoughts on different things I could add, pages I could build out and features I could implement, but knew I had to focus on achieving MVP (Minimum Viable Product) first. It was easy to get caught up in the styling and wanting to make it feel like an extension of the actual game.
 - CSS Responsiveness took a lot of trial and error, time and tinkering between Dev Tools and viewing the app from my phone to see first hand how it was displaying.
 
-## Contributors
+## Contributor
 **Corinne Canavan**
 * [LinkedIn](https://www.linkedin.com/in/corinnecanavan/)
 * [GitHub](https://github.com/CorCanavan)
