@@ -1,4 +1,4 @@
-# Calamity Kitchen
+![CK_Welcome](https://user-images.githubusercontent.com/97919748/226455961-75a128c3-1b0a-463a-bfe3-009e1dff91da.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -42,11 +42,11 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
 Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)! 
 
 ## Illustrations
-### Filtering (make sure sound is on!): 
-https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov
+### Filtering: 
+https://user-images.githubusercontent.com/97919748/226465013-c4fb111c-f68f-4f25-a654-d285870cfdcd.mov
 
-### Ingredient Details Page: 
-https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-80ef-3cb5e65cc956.mov
+### Search Bar: 
+https://user-images.githubusercontent.com/97919748/226465145-a0579469-2c07-4397-a69f-ad8e88a3ca72.mov
 
 ## Set Up
 1. Clone this [repository](https://github.com/CorCanavan/calamity-kitchen).
@@ -59,7 +59,7 @@ https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-
 ## Features
 - A user is first brought to a Welcome page with a description of how to use the app and it's purpose
 - Once clicking on the "Let's Get Cooking" button, a user is brought to the homepage and is able to see all available ingredient cards on homepage load, a Dropdown to filter ingredients by Cooking Effect, as well as a Search bar to find an ingredient by typing in it's name
-- A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage; classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect
+- A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage; classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect when viewing app on desktop
 - A user is able to utilize the Search bar to find an ingredient by typing it's name, in case they do not know the specific Cooking Effect 
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
 - A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects, or can search for an ingredient by name using the Search bar
