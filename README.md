@@ -5,12 +5,13 @@
 - [Learning Goals](#learning-goals)
 - [Technologies](#technologies)
 - [Deployed Link](#deployed-link)
+- [Illustrations](#illustrations)
 - [Set Up](#set-up)
 - [Features](#features)
-- [Illustrations](#illustrations)
 - [Future Features](#future-features)
 - [Reflections](#reflections)
 - [Contributors](#contributors)
+- [Resources](#resources)
 - [Project Specifications](#project-specifications)
 
 ## Introduction
@@ -40,6 +41,13 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
 ## Deployed Link 
 Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)! 
 
+## Illustrations
+### Filtering (make sure sound is on!): 
+https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov
+
+### Ingredient Details Page: 
+https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-80ef-3cb5e65cc956.mov
+
 ## Set Up
 1. Clone this [repository](https://github.com/CorCanavan/calamity-kitchen).
 2. `cd` into the directory.
@@ -49,21 +57,12 @@ Visit the app at the deployed link [here](https://calamity-kitchen.vercel.app/)!
 6. Enter `control + c` to stop the server at any time.
 
 ## Features
-- A user is brought to a Welcome page on page load with a description of how to use the app and it's purpose
+- A user is first brought to a Welcome page with a description of how to use the app and it's purpose
 - Once clicking on the "Let's Get Cooking" button, a user is brought to the homepage and is able to see all available ingredient cards on Homepage load, a Dropdown to filter ingredients by Cooking Effect, as well as a Search bar to find an ingredient by typing in it's name
 - A user is able to filter ingredient cards by selecting a specific Cooking Effect from the dropdown on the homepage; classic cooking jingle from *Zelda: Breath of the Wild* plays upon selection of Cooking Effect
-- Ingredient cards repopulate to display only those that have selected Cooking Effect
-- If a user does not know or want to search ingredients by specific Cooking Effect, a user is able to utilize the Search bar to find an ingredient by name
 - A user is able to utilize the Search bar to find an ingredient by typing it's name, in case they do not know the specific Cooking Effect 
 - A user is able to click on a specific ingredient card to be brought to that ingredient's details page with additional information on the clicked ingredient 
 - A user is able to click on the back button to return to the homepage and can filter by a different Cooking Effect, as well as have the option to view all ingredients again by selecting All Cooking Effects
-
-## Illustrations
-### Filtering (make sure sound is on!): 
-https://user-images.githubusercontent.com/97919748/183327228-21df7e42-f06e-4021-9080-40336bb7ec5e.mov
-
-### Ingredient Details Page: 
-https://user-images.githubusercontent.com/97919748/183328714-5902750c-13fb-45c4-80ef-3cb5e65cc956.mov
 
 ## Future Features
 I love the game *Zelda: Breath of the Wild* and plan on continuing to build out this app to be a resource for gamers who would like to keep track of recipes as well. Future features I want to add include:
@@ -83,6 +82,10 @@ I love the game *Zelda: Breath of the Wild* and plan on continuing to build out 
 **Corinne Canavan**
 * [LinkedIn](https://www.linkedin.com/in/corinnecanavan/)
 * [GitHub](https://github.com/CorCanavan)
+
+## Resources
+- The API I utilized for this project: [Hyrule Compendium API](https://gadhagod.github.io/Hyrule-Compendium-API/#/).
+- The font used for this project: [Hylia Serif](https://artsyomni.com/hyliaserif).
 
 ## Project Specifications
 - Project specs can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html).
