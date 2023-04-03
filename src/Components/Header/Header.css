@@ -38,22 +38,11 @@ header {
   /* width: 20%; */
 }
 
-/* .nav-links {
-  margin-right:.5em;
-  font-size: 1.3em;
-  color: black;
-} */
-
 .nav-links {
   margin-right:.5em;
   font-size: 1.3em;
   color: black;
-  /* text-decoration: underline; */
 }
-
-/* .nav-link-container > a > .active {
-  color: #7EF0F4;
-} */
 
 .active {
   color: #7EF0F4;
@@ -69,5 +58,12 @@ header {
   .nav-links {
     margin-right: .3em;
     font-size: 1em;
+    color: black;
   }
+
+  /* .active {
+    color: #7EF0F4;
+    text-decoration: underline;
+  } */
+
 }

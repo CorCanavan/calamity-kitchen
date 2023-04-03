@@ -19,11 +19,6 @@ const Header = () => {
             <h2 className="nav-links">Recipes</h2>
           </NavLink>
         </div>
-        {/* <div className="title-container">
-          <Link to="/home">
-            <h1 className="header-title">Calamity Kitchen</h1>
-          </Link>
-        </div> */}
       </header>
   )
 }
