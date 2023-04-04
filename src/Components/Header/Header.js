@@ -18,8 +18,8 @@ const Header = () => {
           <NavLink to="/recipes">
             <h2 className="nav-links">Recipes</h2>
           </NavLink>
-        </div>
-      </header>
+      </div>
+    </header>
   )
 }
 
