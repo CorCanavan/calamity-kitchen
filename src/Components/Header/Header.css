@@ -7,16 +7,25 @@ header {
   font-family: 'HyliaSerifBeta-Regular';
   width: 100%;
   border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 .title-container {
   border: 2px solid green;
   margin-left: 2em;
+  /* align-items: center; */
+  /* justify-items: center;
+  flex-grow: 1; */
 } 
 
 .header-title {
   font-size: 2.25em;
   text-align: center;
+  /* justify-self: center; */
   color: #7EF0F4;
   text-shadow: 2px 2px #536f50;
 }
