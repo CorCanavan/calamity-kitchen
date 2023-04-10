@@ -50,19 +50,22 @@ header {
 }
 
 @media screen and (max-width: 400px) {
-
   .nav-links {
     margin-right: .3em;
     font-size: 1em;
-    color: black;
+    /* color: black; */
   }
-
 }
 
 @media screen and (max-width: 559px) {
-
   .header-title {
     font-size: 2.1em;
+  }
+
+  .nav-links {
+    margin-right: .3em;
+    font-size: 1.1em;
+    /* color: black; */
   }
 }
 
