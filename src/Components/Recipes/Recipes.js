@@ -4,8 +4,8 @@ const Recipes = () => {
 
   return (
     <section className="recipes-page">
-      <h2>Coming Soon - Recipes Page!</h2>
-      <p>A place to store your favorite recipes for easy in-game reference.</p>
+      <h2 className="coming-soon">Coming Soon - Recipes Page!</h2>
+      <p className="recipes-blurb">A place to store your favorite recipes for easy in-game reference.</p>
     </section>
   )
 }
