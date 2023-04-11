@@ -8,6 +8,7 @@ import Error from '../Error/Error';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import Search from '../Search/Search';
+import Recipes from '../Recipes/Recipes';
 import Footer from '../Footer/Footer';
 import { getMaterialIngredients, getCreatureIngredients } from '../../apiCalls';
 import cookingJingle from '../../assets/cookingJingle.mp3';
@@ -120,6 +121,16 @@ const App = () => {
               {loading}
               {error && <p className="app-error">{error}</p>}
               <IngredientDetails {...ingredientToRender} />
+              <Footer />
+            </div>
+          }}
+        />
+        <Route
+          exact path="/recipes"
+          render={() => {
+            return <div className="content-wrapper">
+              <Header />
+              <Recipes />
               <Footer />
             </div>
           }}
