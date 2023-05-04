@@ -125,6 +125,7 @@
 
   .welcome-title {
     font-size: 1.7em;
+    padding-top: 5px;
   }
 
   .blurb-wrapper {
@@ -171,7 +172,6 @@
 @media screen and (max-width: 359px) {
   .welcome-title {
     font-size: 1.2em;
-    padding-top: 5px;
   }
 }
 
