@@ -16,7 +16,6 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  /* overflow: scroll; */
 }
 
 .welcome-title {
@@ -82,7 +81,6 @@
 }
 
 @media screen and (max-width: 999px) {
-
   .gif-wrapper {
     width: 60%;
   }
@@ -93,7 +91,6 @@
 }
 
 @media screen and (max-width: 649px) {
-
   .gif-wrapper {
     width: 70%;
   }
@@ -128,6 +125,7 @@
 
   .welcome-title {
     font-size: 1.7em;
+    padding-top: 5px;
   }
 
   .blurb-wrapper {
@@ -143,7 +141,6 @@
     margin-top: 0.3em;
   }
 }
-
 
 @media screen and (max-width: 399px) {
   .welcome-container {
