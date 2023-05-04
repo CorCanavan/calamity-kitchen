@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <section className="welcome-wrapper">
       <section className="welcome-container">
-        <h1 className="welcome-title">Welcome to <span className="calamity-kitchen">Calamity Kitchen</span></h1>
+        <h1 className="welcome-title">Welcome to <div className="calamity-kitchen">Calamity Kitchen</div></h1>
         <div className="blurb-wrapper">
           <p className="welcome-blurb">
           In the video game <i>Zelda: Breath of the Wild</i>, there’s enough to worry about between freeing the Divine Beasts and defeating Calamity Ganon, so we’re here to take the stress out of cooking in the game! 
