@@ -81,7 +81,6 @@
 }
 
 @media screen and (max-width: 999px) {
-
   .gif-wrapper {
     width: 60%;
   }
@@ -92,7 +91,6 @@
 }
 
 @media screen and (max-width: 649px) {
-
   .gif-wrapper {
     width: 70%;
   }
@@ -142,7 +140,6 @@
     margin-top: 0.3em;
   }
 }
-
 
 @media screen and (max-width: 399px) {
   .welcome-container {
