@@ -52,7 +52,7 @@ header {
 
 @media screen and (max-width: 477px) {
   header {
-    padding-bottom: 3px;
+    padding-bottom: 5px;
   }
 }
 
