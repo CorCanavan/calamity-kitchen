@@ -1,6 +1,7 @@
 import './Recipes.css';
 import sitByFire from '../../assets/sitByFireSummer.jpg';
 
+
 const Recipes = () => {
 
   return (
