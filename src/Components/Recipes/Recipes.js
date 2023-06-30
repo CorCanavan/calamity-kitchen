@@ -1,5 +1,5 @@
 import './Recipes.css';
-import sitByFire from '../../assets/sitByFireRev3.jpg';
+import sitByFire from '../../assets/sitByFireSummer.jpg';
 
 const Recipes = () => {
 
